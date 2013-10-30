@@ -33,7 +33,30 @@ a {
 }
 
 #list-menu {
-	width: 600px;
-	margin: 0 auto;
+	width: 400px;
+	margin: 0 0 0 10%;
 	text-align: left;
+}
+
+#list-menu h2 {
+	border-bottom: 1px solid #ccc;
+}
+
+.approval-status {
+	font-size: 0.45em;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 2px 4px;
+	margin: 5px 0 0 0;
+	float: right;
+}
+
+.approved {
+	color: white;
+	background-color: green;
+}
+
+.draft {
+	color: white;
+	background-color: orange;
 }
