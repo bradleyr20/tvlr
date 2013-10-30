@@ -1,0 +1,39 @@
+/* CSS */
+
+html {
+	font: normal 15px "Roboto Light", Roboto-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+#stuff {
+	text-align: center;
+}
+
+#mocks-link {
+	font: normal 1em/1.5em;
+	margin: 30px 0;
+}
+
+#mocks-link a {
+	color: #666;
+}
+
+#mock-container {
+	border: none;
+}
+
+a {
+	border: none;
+	text-decoration: none;
+}
+
+#list-menu {
+	width: 600px;
+	margin: 0 auto;
+	text-align: left;
+}
