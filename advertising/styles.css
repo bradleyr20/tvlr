@@ -101,6 +101,14 @@ li {
 	float: right;
 }
 
+.forward_link:hover {
+	background-color: gray;
+}
+
 .back_link {
 	float: left;
+}
+
+.back_link:hover {
+	background-color: gray;
 }
