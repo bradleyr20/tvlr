@@ -30,9 +30,13 @@ html {
 	font-weight: 100;
 }
 
-a {
+a, a:visited {
 	text-decoration: none;
 	color: #00a3d9;
+}
+
+a:hover {
+	color: black;
 }
 
 #holder {
@@ -95,14 +99,11 @@ li {
 	width: 300px;
 	height: 50px;
 	/* border: 1px solid purple; */
+	text-align: center;
 }
 
 .forward_link {
 	float: right;
-}
-
-.forward_link:hover, .back_link:hover {
-	background-color: #e0e0e0;
 }
 
 .back_link {
