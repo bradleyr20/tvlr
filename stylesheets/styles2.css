@@ -122,3 +122,23 @@ a {
 	color: white;
 	background-color: maroon;
 }
+
+#channels-and-subchannels {
+	border: 1px solid #efefef;
+}
+
+#channels-and-subchannels tr {
+	vertical-align: top;
+}
+
+#channels-and-subchannels tr.alternate {
+	background-color: #eeeeee;
+}
+
+#channels-and-subchannels td, th {
+	padding: 15px;
+}
+
+#channels-and-subchannels th {
+	border-bottom: 1px dotted #dddddd;
+}
