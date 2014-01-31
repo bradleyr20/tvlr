@@ -60,7 +60,8 @@ body {
 #mock-container img {
 	position: relative;
 	top: 0px;
-	/* border: 1px solid #eeeeee; */
+  border-bottom: 1px gray dotted;
+  padding-bottom:30px;
 }
 
 a {
