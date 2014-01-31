@@ -1,0 +1,246 @@
+/* CSS */
+
+@font-face
+{
+	font-family: Mercury;
+	src: url(fonts/old/MercuryDisplay-Roman.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Mercury;
+	src: url(fonts/old/MercuryDisplay-Bold.otf);
+	font-weight:bold;
+}
+
+@font-face
+{
+	font-family: Mercury-Text;
+	src: url(fonts/old/MercuryTextG1-Roman.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: GothamNarrow;
+	src: url(fonts/old/GothamNarrow-Bold.otf);
+	font-weight:bold;
+}
+
+@font-face
+{
+	font-family: GothamNarrow;
+	src: url(fonts/old/GothamNarrow-Book.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: GothamNarrow;
+	src: url(fonts/old/GothamNarrow-Medium.otf);
+	font-weight:500;
+}
+
+@font-face
+{
+	font-family: Graphik;
+	src: url(fonts/old/Graphik-Regular.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Graphik;
+	src: url(fonts/old/Graphik-Medium.otf);
+	font-weight:500;
+}
+
+@font-face
+{
+	font-family: Graphik;
+	src: url(fonts/old/Graphik-Semibold.otf);
+	font-weight:bold;
+}
+
+/* new clearfix */
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+html {
+	font-family: Graphik, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+body {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+#container-tablet, #container-desktop, #container-smartphone {
+	margin:0 auto;
+	text-align: left;
+}
+
+#container-tablet {
+	width: 1024px;
+}
+
+#container-desktop {
+	width: 1400px;
+}
+
+#container-smartphone {
+	width: 320px;
+}
+
+h1 {
+	font-family: Mercury;
+	font-size: 36px;
+	font-weight: normal;
+	line-height: 38px;
+	letter-spacing: -0.02em;
+}
+
+#channel, #subchannel {
+	font-family: GothamNarrow;
+	font-weight: 500;
+}
+
+#titlecard {
+	text-align: center;
+	padding: 30px;
+}
+
+#titlecard #channel {
+	font-size: 18px;
+	color: #fb351c;
+	letter-spacing: 0.125em;
+}
+
+#titlecard #subchannel {
+	font-size: 14px;
+	color: #cbcbcb;
+	letter-spacing: 0.15em;
+}
+
+#byline {
+	font-family: Graphik;
+	font-weight: normal;
+	font-size: 12px;
+	color: #7f7f7f;
+	letter-spacing: -0.02em;
+}
+
+#byline .contrib-name {
+	color: #fb351c;
+}
+
+#titlecard #dek {
+	font-family: Graphik;
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: normal;
+	color: #575757;
+}
+
+.button {
+	font-family: GothamNarrow;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	padding: 13px 30px;
+	color: #fb351c;
+	border: 2px solid #fb351c;
+}
+
+#header.collapsed {
+	height: 50px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 5px #ccc;
+	margin: 0;
+	padding: 0;
+}
+
+#header.collapsed .hed {
+	font-family: Mercury;
+	font-size: 21px;
+	letter-spacing: -0.02em;
+	color:#323232;
+	margin: 0 0 0 10px;
+	padding: 0;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+#header.collapsed .share, #header.collapsed .subscribe {
+	font-family: Graphik;
+	font-weight: 500;
+	font-size: 12px;
+	color: #fb351c;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+#header.collapsed #share-icon {
+	width: 12px;
+	height: 13px;
+	background-image: url(images/share-icon-collapsed-nav-1024.png);
+	background-repeat: no-repeat;
+}
+
+#header.collapsed #hamburger {
+	width: 29px;
+	height: 15px;
+	background-image: url(images/hamburger-collapsed-nav-1024.png);
+	background-repeat: no-repeat;
+}
+
+#header.collapsed #hamburger:hover, #header.collapsed #hamburger:active {
+	background-image: url(images/hamburger-collapsed-nav-active-1024.png);
+	background-repeat: no-repeat;
+}
+
+#header.collapsed #logo {
+	width: 69px;
+	height: 25px;
+	background-image: url(images/logo-collapsed-header.png);
+	background-repeat: no-repeat;
+	float:left;
+}
+
+#header.collapsed #search-icon {
+	width: 21px;
+	height: 21px;
+	background-image: url(images/search-icon-collapsed-nav.png);
+	background-repeat: no-repeat;
+}
+
+#featured-slideshow #main-image {
+	width: 764px;
+	height: 574px;
+	margin: 0 10px;
+}
+
+#featured-slideshow .side-image {
+	width: 120px;
+	height: 574px;
+	padding: 0;
+	margin: 0;
+}
+
+#featured-slideshow .side-image.left.first {
+	background-image: url(images/fill.png);
+	background-repeat: repeat;
+}
