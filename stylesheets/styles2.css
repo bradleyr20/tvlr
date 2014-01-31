@@ -65,6 +65,12 @@ body {
   padding:0 0 30px 0;
 }
 
+@media (max-width: 1024px) {
+	#mock-container img {
+		width: 100%
+	}
+}
+
 a {
 	border: none;
 	text-decoration: none;
