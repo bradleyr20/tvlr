@@ -63,6 +63,7 @@ body {
 	top: 0px;
   border-bottom: 1px gray dotted;
   padding:0 0 30px 0;
+  width: 100%;
 }
 
 a {
