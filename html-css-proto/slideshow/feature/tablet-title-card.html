@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../../proto-style.css">
-	<title></title>
+	<title>Feature slideshow - title card - 1024px</title>
 	
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -11,28 +11,102 @@
 </head>
 <body>
 
-	<div id="container-tablet" style="background-image: url(../../images/769px---1---Title-Card.jpg);">
+	<div id="container-tablet">
 	
 		<div id="featured-slideshow">
 		
 			<div id="header" class="collapsed clearfix">
 				
-				<div id="hamburger" style="float:left; margin: 17px 0 0 44px;">&nbsp;</div>
-				<div id="logo" style="margin:11px 0 0 20px;">&nbsp;</div>
-				<h3 class="hed" style="float:left; margin:14px 10px 0 20px;">Can Using Instagram Really Make Your Hotel Stay...</h3>
-				<div id="share-icon" style="float:left; margin:18px 0 0 15px;">&nbsp;</div>
-				<div class="share" style="float:left; margin:21px 0 0 8px;">Share</div>
-				<div id="search-icon" style="float:right; margin:18px 0 0 15px;">&nbsp;</div>
-				<div class="subscribe" style="float:right; margin:21px 0 0 15px;">Subscribe</div>
+				<div id="hamburger">&nbsp;</div>
+				<div id="logo">&nbsp;</div>
+				<h3 class="hed">Can Using Instagram Really Make Your Hotel Stay...</h3>
+				<div id="share-icon">&nbsp;</div>
+				<div class="share">Share</div>
+				<div id="sponsor-credit"></div>
+				<div id="search-icon">&nbsp;</div>
+				<div class="subscribe">Subscribe</div>
 								
 			</div>
 			
-			<div id="photos-container">
-				<div id=""></div>
-				<div id="">
+			<div id="photos-container" class="clearfix" style="margin: 10px 0 0 0;padding: 0;">
+			
+				<div id="previous-image" class="side-image">
+					<img src="" alt="" />
+				</div>
+				<div id="main-image">
+					<img src="../../images/mykonos-grand-hotel-resort-cyclades-mykonos-greece-1.jpg" alt="" />
+					<div id="titlecard">
+						<h3 id="channel">Trip Ideas</h3>
+						<h4 id="subchannel">Best of the Best</h4>
+						<h1 id="hed">Mykonos Grand Hotel &amp; Resort</h1>
+						<h4 id="byline" style="margin: 10px 0 0 0;">Reviewed by <a class="contrib-name" href="#">Kate Maxwell</a> &bullet; Photography by <a class="contrib-name" href="#">Patrick Warner</a></h4>
+						<h4 id="pub-time">August 15, 2013</h4>
+						<h5 id="dek">Located on Ayios Yiannis beach, opposite the island of Delos, this "delightful and marvelous" 2001 hotel was built on land that housed only a beach tavern and embodies Cycladic architecture with cube-shaped whitewashed buildings linked by pathways and terraces. Public spaces use elaborate mosaics; and hand-carved marble to set the tone.</h5>
+						<a href="#"><div class="button">Start Slideshow</div></a>
+					</div>
+				</div>
+				<div id="next-image" class="side-image">
+					<img src="../../images/mykonos-grand-hotel-resort-cyclades-mykonos-greece.jpg" alt="" />
+				</div>
+				
+			</div>
+			
+			<div id="contrib-share-band" class="clearfix" style="display: table;">
+				<div class="contrib-credit clearfix" style="display: table-cell; vertical-align: top;">
+					<div class="photo contributor">
+						<img src="../../images/kate-maxwell-photo.png" alt="" />
+					</div>
+					<div class="mini-bio">
+						<h3><a href="#" class="name">Kate Maxwell</a></h3>
+						<p class="summary">Our Europe editor, based in London.</p>
+						<h6 class="contrib-recent">Recent Places &amp; Topics</h6>
+						<ul class="places clearfix">
+							<li class="place"><a href="#">Greece</a></li>
+							<li class="place"><a href="#">London</a></li>
+							<li class="place"><a href="#">Normandy</a></li>
+						</ul>
+						<ul class="topics clearfix" style="margin-bottom: 30px;">
+							<li class="topic"><a href="#">Sledding</a></li>
+							<li class="topic"><a href="#">Seafood</a></li>
+							<li class="topic"><a href="#">Rain Gear</a></li>
+						</ul>
+						
+						<a href="#"><div class="button dossier">Kate's Traveler Dossier</div></a>
+						
+					</div>
 					
 				</div>
-				<div id=""></div>
+				<div id="share-box">
+					<h3>Share &amp; Discuss</h3>
+					<ul id="share-tools" class="clearfix" style="margin: 14px 0 30px;">
+						<li class="share-icon facebook">&nbsp;</li>
+						<li class="share-icon twitter">&nbsp;</li>
+						<li class="share-icon google-plus">&nbsp;</li>
+						<li class="share-icon linkedin">&nbsp;</li>
+						<li class="share-icon print">&nbsp;</li><!--this should bring up the default browser print dialogue-->
+						<li class="share-icon email">&nbsp;</li><!-- this should be a mailto: which brings up the user's default client, prepopulates subject with "Sharing a story from CNTraveler.com," and populates the body with the story's h1, dek (if available), and URL-->
+					</ul>
+					<a href="#"><div class="button comments">14 Comments</div></a>
+				</div>
+			</div>
+			
+			<div id="recirc-row" class="clearfix">
+				<div class="tout">
+					<p class="more-in">more in <a href="#" class="more-in-topic">Photography</a></p>
+					<h3 class="recirc-tout">A Mountain Hike So Stunning, You Won't Believe it's in L.A.</h3>
+				</div>
+				<div class="tout">
+					<p class="more-in">more in <a href="#" class="more-in-topic">Hotels</a></p>
+					<h3 class="recirc-tout">Best Hotel Room Fireplaces for Getting it On (Bearskin Rug Not Included)</h3>
+				</div>
+			</div>
+			
+			<div class="leaderboard-holder" style="text-align: center; padding: 50px; margin: 0; border-bottom: 1px solid #e4e4e4;">
+				<div class="leaderboard-ad" style="width: 728px; height: 90px; background-color: #ccc; display: table-cell; vertical-align: middle; color: #999;">728x90</div>
+			</div>
+			
+			<div id="recirc-container" style="padding: 50px 0;text-align: center;">
+				<h4 class="recirc-header" style="font-family: GothamNarrow;font-weight: 500;letter-spacing: 0.1em;color: #7f7f7f;">Most Popular Galleries</h4>
 			</div>
 			
 		</div>
