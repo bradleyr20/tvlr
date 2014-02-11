@@ -306,6 +306,10 @@ ul {
 	margin: 15px 43px 0 30px; 
 }
 
+#featured-slideshow {
+	text-align: center;
+}
+
 #featured-slideshow #main-image {
 	width: 764px;
 	height: 574px;
@@ -356,6 +360,12 @@ ul {
 #featured-slideshow #photos-container img {
 	max-height: 574px;
 	max-width: 764px;
+}
+
+#secondary {
+	width: 942px;
+	text-align: left;
+	margin: 0 auto;
 }
 
 #contrib-share-band {
@@ -455,7 +465,7 @@ h6.contrib-recent {
 }
 
 #share-box {
-	padding: 0 0 0 170px;
+	padding: 0 0 0 100px;
 	display: table-cell;
 	vertical-align: top;
 }
@@ -538,4 +548,65 @@ h3.recirc-tout {
 	font-size: 36px;
 	line-height: 38px;
 	font-weight: normal;
+}
+
+.leaderboard-holder {
+	text-align: center;
+	padding: 50px;
+	margin: 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.leaderboard-holder .leaderboard-ad {
+	width: 728px; height: 90px;
+	background-color: #ccc;
+	color: #999;
+	margin: 0 auto;
+	text-align:center;
+}
+
+.leaderboard-holder .leaderboard-ad p {
+	padding:35px 0 0 0; margin:0;
+}
+
+#recirc-container {
+	text-align: center;
+	padding: 50px 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+#recirc-container h4.recirc-header {
+	font-family: GothamNarrow;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	color: #7f7f7f;
+	text-transform: uppercase;
+}
+
+#recirc-container ul.recirc-touts.three {
+	margin: 20px auto;
+	display: table;
+}
+
+#recirc-container .recirc-tout.three {
+	float: left;
+	margin: 0 30px 0 0;
+}
+
+#recirc-container .recirc-tout.three:last-of-type {
+	margin-right: 0;
+}
+
+#recirc-container .tout-image.three {
+	width: 301px;height: 226px;background-color: #e4e4e4;
+}
+
+#recirc-container .tout-hed.three {
+	font-family: Mercury;
+	font-size: 18px;
+	line-height: 22px;
+	margin: 10px 0 0 0;
+	max-width: 291px;
+	padding: 0 5px;
+	text-align: center;
 }
