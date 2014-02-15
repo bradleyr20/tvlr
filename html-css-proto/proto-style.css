@@ -526,7 +526,7 @@ h6.contrib-recent {
 	text-align: center;
 	padding: 0 50px;
 	float: left;
-	width: 412px;
+	width: 38%;
 }
 
 #recirc-row .tout .more-in {
@@ -590,7 +590,7 @@ h3.recirc-tout {
 
 #recirc-container .recirc-tout.three {
 	float: left;
-	margin: 0 30px 0 0;
+	margin: 0 10px 0 0;
 }
 
 #recirc-container .recirc-tout.three:last-of-type {

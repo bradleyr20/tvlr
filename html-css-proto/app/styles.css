@@ -1,0 +1,170 @@
+/* CSS */
+
+/* ------ BUREAU (uses Compressed) ------ */
+
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/BureauGrotComp-Book.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/BureauGrotComp-Medium.otf);
+	font-weight:bold;
+}
+
+
+
+/* ------ FARNHAM ------ */
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamText-Regular.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamText-Bold.otf);
+	font-weight: bold;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamDisplay-Light.otf);
+	font-weight: 100;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamText-RegularItal.otf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamText-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/FarnhamDisplay-LightItalic.otf);
+	font-weight: 100;
+	font-style: italic;
+}
+
+
+/* ------ CIRCULAR ------ */
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-Book.otf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-Bold.otf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-Medium.otf);
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-Black.otf);
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-BookItalic.otf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-MediumItalic.otf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/CircularStd-BlackItalic.otf);
+	font-weight: 900;
+	font-style: italic;
+}
+
+
+
+/* new clearfix */
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+html {
+	font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #323232;
+}
+
+body {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	color: #fb351c;
+	text-decoration: underline;
+}
