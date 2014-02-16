@@ -16,6 +16,13 @@
 	font-weight:bold;
 }
 
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/BureauGrotComp-Light.otf);
+	font-weight:100;
+}
+
 
 
 /* ------ FARNHAM ------ */
@@ -132,6 +139,14 @@
 	font-style: italic;
 }
 
+/* ------ SYMBOL ICON BLOCK ------ */
+
+@font-face
+{
+	font-family: SymbolIconBlock;
+	src: url(fonts/ss-symbolicons-block.otf);
+	font-weight: normal;
+}
 
 
 /* new clearfix */
@@ -167,4 +182,72 @@ a {
 a:active, a:hover {
 	color: #fb351c;
 	text-decoration: underline;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+.splash-tout {
+	padding: 32px;
+	float: left;
+	text-align: center;
+	width: 190px;
+}
+
+.splash-icon {
+	font-family: SymbolIconBlock;
+	font-size: 24px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.splash-pre-hed {
+	font-family: Circular;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 12px;
+	border-bottom: 1px dotted;
+	padding-bottom: 15px;
+	margin-bottom: 18px;
+}
+
+.splash-hed {
+	font-family: Farnham;
+	font-size: 34px;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.025em;
+	word-spacing: -0.025em;
+	line-height: 1.15em;
+}
+
+.blue-1 {
+	color: #56D6FF;
+}
+
+.blue-2 {
+	color: #00ADE8;
+}
+
+.yellow-1 {
+	color: #EECC00;
+}
+
+.red-1 {
+	color: #FF7664;
+}
+
+.white {
+	color: #FFF;
 }
