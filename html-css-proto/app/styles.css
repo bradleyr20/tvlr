@@ -195,6 +195,17 @@ li {
 	padding: 0;
 }
 
+#splash-logo {
+	width: 175px;position: absolute; top: 62px;left: 309px;
+}
+
+#tout-holder {
+	position: absolute;
+	top: 65%;
+	left: 0;
+	width: 100%;
+}
+
 .splash-tout {
 	padding: 32px;
 	float: left;
