@@ -248,8 +248,7 @@ li {
 	font-weight: 100;
 	position: absolute;
 	right: 13%;
-	margin: 12px 0 0 0;
-	/*letter-spacing: 0.125em;*/
+	margin: 15px 0 0 0;
 }
 
 #splash #logo {
@@ -258,16 +257,16 @@ li {
 
 #tout-holder {
 	position: absolute;
-	top: 60%;
+	top: 64%;
 	left: 0;
 	width: 100%;
 }
 
 .splash-tout {
-	padding: 32px;
+	padding: 0 30px;
 	float: left;
 	text-align: center;
-	width: 190px;
+	width: 196px;
 	color: #00ADE8;
 }
 
