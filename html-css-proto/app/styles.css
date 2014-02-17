@@ -259,14 +259,16 @@ li {
 	position: absolute;
 	top: 64%;
 	left: 0;
-	width: 100%;
+	width: 708px;
+	padding: 0 30px;
+	margin: 0;
 }
 
 .splash-tout {
-	padding: 0 30px;
+	padding: 0 15px;
 	float: left;
 	text-align: center;
-	width: 196px;
+	width: 206px;
 	color: #00ADE8;
 }
 
