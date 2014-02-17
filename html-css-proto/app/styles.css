@@ -224,16 +224,32 @@ li {
 	width: 100%;
 }
 
-.title-holder #title {
-	font-family: Circular;
-	font-size: 215px;
-	font-weight: bold;
+.title-holder h1, .title-holder h2 {
 	font-style: normal;
 	color: black;
-	letter-spacing: -0.0375em;
 	line-height: 0.825em;
 	margin: 0;
 	padding: 0;
+}
+
+.title-holder h1 {
+	font-family: Circular;
+	font-size: 215px;
+	opacity: 0.3;
+	font-weight: bold;
+	letter-spacing: -0.0375em;
+}
+
+.title-holder h2 {
+	font-family: Farnham;
+	font-size: 64px;
+	font-style: italic;
+	opacity: 0.15;
+	font-weight: 100;
+	position: absolute;
+	right: 13%;
+	margin: 12px 0 0 0;
+	/*letter-spacing: 0.125em;*/
 }
 
 #splash #logo {
@@ -242,7 +258,7 @@ li {
 
 #tout-holder {
 	position: absolute;
-	top: 65%;
+	top: 60%;
 	left: 0;
 	width: 100%;
 }
