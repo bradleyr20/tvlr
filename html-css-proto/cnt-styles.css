@@ -1,0 +1,773 @@
+/* CSS */
+
+/* COLORS ------------------ */
+
+.sky {
+	color:  #00AEEF;
+}
+
+.nero {
+	color: #191919;
+}
+
+.gray {
+	color: #7F7F7F;
+}
+
+.silver {
+	color: #CBCBCB;
+}
+
+.mercury {
+	color: #e4e4e4;
+
+.alabaster {
+	color: #F7F7F7;
+}
+
+
+/* FONT DEFINITIONS ------------- */
+
+
+/* ------ BUREAU (uses Condensed) ------ */
+
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/new/BureauGrotCond-Book.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/new/BureauGrotCond-Medium.otf);
+	font-weight:bold;
+}
+
+@font-face
+{
+	font-family: Bureau;
+	src: url(fonts/new/BureauGrotCond-Light.otf);
+	font-weight:100;
+}
+
+
+
+/* ------ FARNHAM ------ */
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-Regular.otf);
+	font-weight:normal;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-RegularItal.otf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-Bold.otf);
+	font-weight: bold;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-Light.otf);
+	font-weight: 100;
+}
+
+@font-face
+{
+	font-family: Farnham;
+	src: url(fonts/new/FarnhamDisplay-LightItalic.otf);
+	font-weight: 100;
+	font-style: italic;
+}
+
+
+
+/* ------ CIRCULAR ------ */
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-Book.otf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-Bold.otf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-Medium.otf);
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-Black.otf);
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-BookItalic.otf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-MediumItalic.otf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: Circular;
+	src: url(fonts/new/CircularStd-BlackItalic.otf);
+	font-weight: 900;
+	font-style: italic;
+}
+
+/* ------ SYMBOL ICON BLOCK ------ */
+
+@font-face
+{
+	font-family: SymbolIconBlock;
+	src: url(fonts/new/ss-symbolicons-block.otf);
+	font-weight: normal;
+}
+
+@font-face
+{
+	font-family: Fontawesome;
+	src: url(fonts/new/FontAwesome.otf);
+	font-weight: normal;
+}
+
+@font-face
+{
+	font-family: cntsymbols;
+	src: url(fonts/new/cnt-symbols.ttf);
+	font-weight: normal;
+}
+
+
+
+
+/* TEXT STYLES ------------------ */
+
+
+/* ---------- HED STYLES */
+
+.headline-a {
+	font-family: Circular;
+	font-size: 76px;
+	font-weight: bold;
+	line-height: 76px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: lowercase;
+}
+
+.headline-a:hover, .headline-a:active {
+	color: inherit;
+	text-decoration: none ;
+}
+
+.headline-b {
+	font-family: Bureau;
+	font-size: 52px;
+	line-height: 52px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: uppercase;
+}
+
+.headline-b:hover, .headline-b:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-c {
+	font-family: Circular;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 48px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-c:hover, .headline-c:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.headline-d {
+	font-family: Bureau;
+	font-size: 42px;
+	line-height: 42px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: uppercase;
+}
+
+.headline-d:hover, .headline-d:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-e {
+	font-family: Circular;
+	font-size: 34px;
+	font-weight: bold;
+	line-height: 36px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-e:hover, .headline-e:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-f {
+	font-family: Circular;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 24px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-f:hover, .headline-f:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-g {
+	font-family: Circular;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 20px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-g:hover, .headline-g:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-h {
+	font-family: Circular;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-h:hover, .headline-h:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.headline-i {
+	font-family: Farnham;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 22px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.headline-i:hover, .headline-i:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+
+/* ---------- DISPLAY STYLES */
+
+.display-a {
+	font-family: Bureau;
+	font-size: 32px;
+	font-weight: normal;
+	line-height: 32px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.display-a:hover, .display-a:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.display-b {
+	font-family: Bureau;
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 24px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+/*.display-b:hover, */.display-b:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.display-c {
+	font-family: Farnham;
+	font-size: 16px;
+	font-weight: 100;
+	line-height: 20px;
+	color: black;
+	letter-spacing: 0.21428571rem; /* 3px */
+	text-transform: uppercase;
+}
+
+.display-c:hover, .display-c:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.display-d {
+	font-family: Bureau;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 18px;
+	color: #00AEEF;
+	letter-spacing: 0.07142857rem;
+	text-transform: uppercase;
+}
+
+.display-d:hover, .display-d:active {
+	color: black;
+	text-decoration: none;
+}
+
+.display-e {
+	font-family: Bureau;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 16px;
+	color: #00AEEF;
+	letter-spacing: 0.07142857rem;
+	text-transform: uppercase;
+}
+
+.display-e:hover, .display-e:active {
+	color: black;
+	text-decoration: none;
+}
+
+.display-f {
+	font-family: Farnham;
+	font-size: 32px;
+	font-weight: normal;
+	line-height: normal;
+	color: #e4e4e4;
+}
+
+
+
+/* ---------- LABEL STYLES */ 
+
+.label-a {
+	font-family: Farnham;
+	font-size: 13px;
+	font-weight: 100;
+	line-height: 17px;
+	color: black;
+	letter-spacing: 0.21428571rem; /* 3px */
+	text-transform: uppercase;
+}
+
+.label-a:hover, .label-a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.label-b {
+	font-family: Farnham;
+	font-size: 15px;
+	font-weight: normal;
+	font-style: italic;
+	line-height: 18px;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.label-b:hover, .label-b:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.label-c {
+	font-family: Farnham;
+	font-size: 13px;
+	font-weight: 900;
+	line-height: 13px;
+	color: black;
+	letter-spacing: 0.21428571rem; /* 3px */
+	text-transform: uppercase;
+	padding: 10px 15px;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.label-c:hover, .label-c:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.label-e {
+	font-family: Circular;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	color: #CBCBCB;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.label-e:hover, .label-e:active {
+	color: black;
+	text-decoration: none;
+}
+
+.label-d {
+	font-family: Circular;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: normal;
+	color: black;
+	opacity: 0.5;
+}
+
+.label-d:hover, .label-d:active {
+	opacity: 1;
+	text-decoration: none;
+}
+
+
+
+/* ---------- LINK STYLES */
+
+.link-a {
+	font-family: Circular;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: normal;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.link-a:hover, .link-a:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.link-b {
+	font-family: Circular;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: normal;
+	color: black;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.link-b:hover, .link-b:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.link-c {
+	font-family: Circular;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: normal;
+	color: #00AEEF;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.link-c:hover, .link-c:active {
+	color: black;
+	text-decoration: none;
+}
+
+.link-d {
+	font-family: Bureau;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: normal;
+	color: black;
+	letter-spacing: 0.07142857rem; /* 1px */
+	text-transform: uppercase;
+}
+
+.link-d:hover, .link-d:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.link-e {
+	font-family: Bureau;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: normal;
+	color: black;
+	letter-spacing: 0.07142857rem; /* 1px */
+	text-transform: uppercase;
+}
+
+.link-e:hover, .link-e:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.link-f {
+	font-family: Circular;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: normal;
+	color: #7F7F7F;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.link-f:hover, .link-f:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+
+
+/* ---------- MISC STYLES */
+
+.tag {
+	font-family: Circular;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	color: #7F7F7F;
+	letter-spacing: normal;
+	text-transform: none;
+	border-radius: 2px;
+	padding: 5px 7.5px;
+	background-color: #F7F7F7;
+}
+
+.tag:hover, .tag:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.menu {
+	font-family: Circular;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: normal;
+	color: black;
+	letter-spacing: 0.07142857rem; /* 1px */
+	text-transform: uppercase;
+}
+
+.menu:hover, .menu:active {
+	color: #00AEEF;
+	text-decoration: none;
+}
+
+.sponsor-tag-1 {
+	font-family: Farnham;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 10px;
+	color: #7F7F7F;
+	letter-spacing: normal;
+}
+
+.sponsor-tag-2 {
+	font-family: Farnham;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 13px;
+	color: #7F7F7F;
+	letter-spacing: normal;
+}
+
+.input-box-text {
+	font-family: Farnham;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	color: #7F7F7F;
+	letter-spacing: normal;
+}
+
+#footer .copyright {
+	font-family: Farnham;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: #565656;
+	letter-spacing: normal;
+}
+
+.slideshow-counter-1 {
+	font-family: Bureau;
+	font-style: normal;
+	font-weight: 100	;
+	font-size: 26px;
+	color: black;
+	letter-spacing: 0.1em;
+}
+
+.slideshow-counter-2 {
+	font-family: Bureau;
+	font-style: normal;
+	font-weight: 100	;
+	font-size: 16px;
+	color: black;
+	opacity: 0.5;
+}
+
+.slideshow-counter-2:hover, .slideshow-counter-2:active {
+	opacity: 1;
+	text-decoration: none;
+}
+
+.review-tally, .list-tally {
+	font-family: Bureau;
+	font-style: normal;
+	font-weight: 100	;
+	font-size: 42px;
+	color: black;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 105px;
+	height: 105px;
+	border: 3px solid black;
+	border-radius: 55.5px;
+}
+
+.review-tally:hover, .list-tally:hover, .review-tally:active, .list-tally:active {
+	background-color: #00AEEF;
+	color: white;
+}
+
+
+
+/* ---------- BUTTON STYLES */
+
+.button-1 {
+	font-family: Bureau;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: normal;
+	color: white;
+	letter-spacing: 0.07142857rem; /* 1px */
+	text-transform: uppercase;
+	padding: 17.5px 25px;
+	background-color: #00AEEF;
+}
+
+.button-1:hover, .button-1:active {
+	background-color: black;
+}
+
+
+
+/* ---------- BODY STYLES */
+
+.body-a {
+	font-family: Farnham;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 26px;
+	color: black;
+}
+
+.body-b {
+	font-family: Farnham;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 24px;
+	color: black;
+}
+
+.body-c {
+	font-family: Farnham;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+	color: black;
+}
+
+.body-a a, .body-b a, .body-c a {
+	color: #00AEEF;
+}
+
+.body-a a:hover, .body-a a:active, .body-b a:hover, .body-b a:active, .body-c a:hover, .body-c a:active {
+	color: inherit;
+	text-decoration: underline;
+}

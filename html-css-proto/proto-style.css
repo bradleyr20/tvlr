@@ -94,7 +94,7 @@ a {
 }
 
 a:active, a:hover {
-	color: #fb351c;
+	color: #00AEEF;
 	text-decoration: underline;
 }
 
@@ -117,11 +117,11 @@ a:active, a:hover {
 }
 
 h1 {
-	font-family: Mercury;
+	font-family: Circular;
 	font-size: 36px;
-	font-weight: normal;
+	font-weight: bold;
 	line-height: 38px;
-	letter-spacing: -0.02em;
+	letter-spacing: normal;
 }
 
 h1#hed {
@@ -141,8 +141,8 @@ ul {
 }
 
 #channel, #subchannel {
-	font-family: GothamNarrow;
-	font-weight: 500;
+	font-family: Bureau;
+	font-weight: normal;
 	text-transform: uppercase;
 }
 
@@ -160,14 +160,12 @@ ul {
 
 #titlecard #channel {
 	font-size: 18px;
-	color: #fb351c;
-	letter-spacing: 0.125em;
+	color: #00AEEF;
 }
 
 #titlecard #subchannel {
 	font-size: 14px;
-	color: #cbcbcb;
-	letter-spacing: 0.15em;
+	color: #00AEEF;
 }
 
 #byline, #pub-time {
@@ -221,12 +219,15 @@ ul {
 	background-color: #fb351c;
 }
 
-#header.collapsed {
-	height: 50px;
+#header {
 	background-color: #ffffff;
 	box-shadow: 0px 5px 5px #ccc;
 	margin: 0;
 	padding: 0;
+}
+
+#header.collapsed {
+	height: 50px;
 }
 
 #header.collapsed .hed {
@@ -609,4 +610,20 @@ h3.recirc-tout {
 	max-width: 291px;
 	padding: 0 5px;
 	text-align: center;
+}
+
+
+
+/* ------------ CHANNEL INDEX ------------------ */
+
+#header.expanded {
+	height: 112px;
+}
+
+#header.expanded #subscribe {
+	
+}
+
+#header.expanded #logo {
+	
 }
