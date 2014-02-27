@@ -76,6 +76,8 @@ a {
 	text-decoration: none;
 }
 
+a:hover { text-decoration: underline; }
+
 #list-menu {
 	width: 500px;
 	margin: 0 0 0 10%;
@@ -106,6 +108,7 @@ a {
 
 #list-menu h3 {
 	font-size: 1em;
+	color: gray;
 }
 
 .approval-status {
