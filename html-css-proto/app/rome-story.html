@@ -4,124 +4,170 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles.css" />
-	<title>Splash</title>
+	<script language="javascript" src="scripts/jquery-2.1.0.min.js" type="text/javascript"></script>
+	<script language="javascript" src="scripts/cnt-app-scripts.js" type="text/javascript"></script>
+	<title>Roma Nuova</title>
 	
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
 	<style type="text/css">
-		.rule.hed { width: 40px;height: 3px;background-color: black;padding: 0;left: 314px;position: absolute;margin: 15px 0; }
-		.article { text-align: left;width: 608px;top: 780px;left: 80px;position: absolute; }
-		.article p { font-family: Farnham;font-weight: normal;font-style: normal;font-size: 22px;line-height: 40px;margin: 40px 0 0 0; }
-		.article h3 { font-family: Circular;font-size: 30px;font-weight: 100;margin: 60px 0 0 0;padding: 0;color: #00AEEF; }
-		.contributors { display: inline-block; }
-		.contributors li { float: left;margin: 0 5px 0 0; }
-		.contributors .role { font-family: Farnham;font-size: 15px;line-height: 18px;font-style: italic;color: black;font-weight: 100; }
-		.contributors .contributor { font-family: Circular;font-size: 15px;line-height: 15px;font-style: normal;color: black;font-weight: normal; }
-		.contributors .separator { font-family: cntsymbols;font-size: 20px; }
+		#story { position: relative;width: 768px;margin: 0;padding: 0; }
+		#story #header { height: 30px;width: 768px;top: 0;left: 0;position: fixed; }
+		#header #nav-activation { font-family: cntsymbols;font-size: 15px;color: #000;opacity: 0.35;position: absolute;top: 15px;left: 20px; }
+		#share-activation { float: right;font-family: cntsymbols;font-size: 16px;color: #000;opacity: 0.35;position: absolute;top: 13px;right: 20px; }
+		#story #body { width: 768px;position: absolute;top: 0;left: 0; }
+		#lede { width: 768px;text-align: center; }
+		#lede .copy { width: 668px;position:absolute;top:115px;left:50px;margin:0;padding: 0;text-align:center; }
+		#lede .image-holder { width: 768px;height: 640px;overflow: hidden;position: absolute;top: 0;left: 0;z-index: -1; }
+		#lede .image-holder img { width: 100%;position: absolute;top: 0;left: 0; }
+		#lede h1 { font-family: Circular;font-style: normal;font-size: 64px;font-weight: 900;text-transform: uppercase;display: inline-block;margin: 0;padding: 0; }
+		#lede h2 { width: 500px;display:inline-block;margin:40px auto 20px;padding:0;font-family:Farnham;font-style:italic;font-size:28px;font-weight: 100; }
+		#lede .rule.hed { width: 40px;height: 3px;background-color: black;padding: 0;left: 314px;position: absolute;margin: 15px 0; }
+		#lede .contributors { display: inline-block; }
+		#lede .contributors li { float: left;margin: 0 5px 0 0; }
+		#lede .contributors .role { font-family: Farnham;font-size: 15px;line-height: 18px;font-style: italic;color: black;font-weight: 100; }
+		#lede .contributors .contributor { font-family: Circular;font-size: 15px;line-height: 15px;font-style: normal;color: black;font-weight: normal; }
+		#lede .contributors .separator { font-family: Fontawesome; font-size: 42px; line-height: 5px; margin: 0 9px 0 4px; color: rgba(0, 0, 0, 1); }
+		#story .article { text-align: left;width: 608px; padding: 10px 0 100px 0; margin: 0 auto; left: 88px; position: relative; border-top: 1px solid #e4e4e4;position: absolute; top: 1050px; }
+		#story .article p { font-family: Farnham;font-weight: normal;font-style: normal;font-size: 22px;line-height: 40px;margin: 40px 0 0 0; }
+		#story .article h3 { font-family: Circular;font-size: 30px;font-weight: 100;margin: 60px 0 0 0;padding: 0;color: #666; }
+		span.neighborhood { color: #00aeef;font-family: Circular;font-weight: bold; }
+		span.neighborhood:hover, span.neighborhood:active { cursor: pointer; }
+		span.neighborhood::before { content: "";display: inline-block;width: 20px;height: 22px;background-image: url(images/map-pin-cnt-blue.svg);background-repeat: no-repeat;background-position-x: center;background-position-y: center;background-size: auto 100%;margin: 0 3px 0 0; }
+		#photo-barrier { width: 768px;background-color: rgba(0,0,0,1);height: 30px;top: 640px;position: absolute; }
+		.map-inset { display: block; width:300px;height:300px;border:1px solid white;border-radius: 150px;box-shadow: 0px 5px 10px #666;overflow:hidden; background-image: url(images/rome-map-300x300.png); background-position: 0 0; background-repeat: no-repeat; margin: 0 auto;position: absolute;top: 505px;left: 234px; }
+		.link { width: 62px;height: 62px;background-color: black;background-repeat: no-repeat;background-position: center;border-radius: 31px;box-shadow: 0px 3px 6px #666; display: block; }
+		.trip-map.link { background-image: url(images/itinerary-map-icon-blue.svg);background-size: 65% auto; position: absolute; top: 773px; left: 353px; }
+		.slideshow.link { background-image: url(images/slideshow-icon-blue.svg);background-color: black;background-size: 75% auto;position: absolute; top: 900px; left: 353px; }
+		.holder { position: absolute;text-align: center;width: 100%; }
+		.label { font-family: Circular; font-size:14px; font-weight: normal; font-style: normal; text-transform: none; letter-spacing:normal; color: #00AEEF; }
+		.white { color:white; }
+		#overlay { width: 768px; height: 1024px; background-color: rgba(255,255,255,0.9);position: fixed;top: 0;left: 0;z-index: 1; }
+		.price-range { margin: 10px 0 10px 0; padding: 0; }
+		.price-symbol { float: left; font-family: venuesymbols; font-size: 32px; color: #e4e4e4; margin: 0 8px 0 0; padding: 0; }
+		.price-symbol.on { color: #00AEEF; }
+		.price-symbol:last-of-type { margin-right: 0; }
+		.location { width: 500px; height: 768px; position: absolute; }
 	</style>
 	
 </head>
 <body style="margin: 0;padding: 0;">
 
-	<div id="story" style="position: relative;width: 768px;margin: 0;padding: 0;">
+	<div id="story">
 	
-		<ul id="header" class="clearfix" style="height: 30px;width: 768px;top: 0;left: 0;position: fixed;">
-		
-			<li style="font-family: cntsymbols;font-size: 15px;color: #000;opacity: 0.35;position: absolute;top: 15px;left: 20px;">&#xe84e;</li>	
-			<li style="float: right;font-family: cntsymbols;font-size: 16px;color: #000;opacity: 0.35;position: absolute;top: 13px;right: 20px;">&#xe850;</li>
+		<ul id="header" class="clearfix">
+			<li id="nav-activation">&#xe84e;</li>	
+			<li id="share-activation">&#xe850;</li>
 		</ul><!--end of header-->
 		
-		<div id="body" style="width: 768px;position: absolute;top: 0;left: 0;" class="clearfix">
+		<div id="body"class="clearfix">
 		
-			<div id="lede" style="width: 768px;text-align: center;" class="clearfix">
+			<div id="overlay">
+				<ul class="location neighborhood centro-storico">
+					<li class="map"></li>
+					<li class="name"></li>
+					<li class="address"></li>
+					<li class="phone"></li>
+					<li class="website"></li>
+				</ul>
+				<ul class="location venue hotel dom">
+					<li class="map"></li>
+					<li class="name">D.O.M.</li>
+					<li class="address"></li>
+					<li>
+						<ul class="price-range clearfix">
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol">&#xe800;</li>
+						</ul>
+					</li>
+					<li class="phone"></li>
+					<li class="website"></li>
+				</ul>
+			</div>
+		
+			<div id="lede" class="clearfix">
 			<!--lede material-->
-				<div style="width: 768px;height: 640px;overflow: hidden;position: absolute;top: 0;left: 0;z-index: -1;">
-					<img style="width: 100%;" src="images/rome/0314-TR-WERO01.png" style="position: absolute;top: -110px;left: 0;" alt="" />
+				<div class="image-holder">
+					<img src="images/rome/0314-TR-WERO01.png" style="top: -30px;" alt="" />
 				</div>
-				<div class="hed" style="width: 668px;position:absolute;top:120px;left:50px;margin:0;padding: 0;text-align:center;">
-					<h1 style="font-family: Circular;font-style: normal;font-size: 64px;font-weight: 900;text-transform: uppercase;display: inline-block;margin: 0;padding: 0;">Roma Nuova</h1>
+				<div class="copy">
+					<h1 class="hed">Roma Nuova</h1>
 					<div class="rule hed"></div>
-					<div class="dek" style="width:540px;display:inline-block;margin:20px 0 0 0;padding:0;">
-						<h2 style="font-family:Farnham;font-style:italic;font-size:1.875rem;font-weight: 100;">10 Days in the New Rome: Fresh Hotels, Timeless Trattorias</h2>
+					<h2 class="dek">10 Days in the New Rome: Fresh Hotels, Timeless Trattorias</h2>
 					<ul class="contributors clearfix">
 						<li class="role">Words</li>
 						<li class="contributor">Laura Giannatempo</li>
-						<li class="separator"></li>
-						<li class="role">Picures</li>
+						<li class="separator">&lowast;</li>
+						<li class="role">Pictures</li>
 						<li class="contributor">Crick Crack Crock</li>
 					</ul>
-					</div>
-				</div><!--end of hed-->
+				</div>
 			</div><!--end of lede-->
 			
-			<div id="tools" style="width: 768px;background-color: rgba(0,0,0,1);height: 130px;top: 640px;position: absolute;" class="clearfix"><!--shortcuts for getting to critical info from story-->
-				<div class="map-inset" style="left:80px;bottom:40px;width:250px;height:250px;border:1px solid white;position:absolute;box-shadow: 0px 5px 10px #000;overflow:hidden;">
-					<img src="images/rome-map-300x300.png" style="margin: 0;padding: 0;top:-25px;left:-25px;position:relative;" alt="" />
-				</div>
-				<div style="font-family:Circular;font-size:13px;font-weight:900;text-transform:uppercase;position:absolute;right:150px;bottom:58px;color:white;letter-spacing:0.1em;">Gallery</div>
-				<div class="slideshow-link" style="display:inline-block;width:52px;position:absolute;right:90px;bottom:50px;">
-					<img src="images/slideshow-icon-blue.svg" style="margin: 0;padding: 0;width: 100%;" alt="" />
-				</div>
-			</div><!--end of tools-->
+			<div id="photo-barrier"></div>
 			
-			<div style="text-align: center;">
+			<div class="map-inset"></div>
+			<div class="trip-map link"></div>
+			<div class="holder" style="top: 845px;">
+				<div class="label">View the places mentioned in this story on a map</div>
+			</div>
+			<div class="slideshow link"></div>
+			<div class="holder" style="top: 973px;">
+				<div class="label">View this story's photos in a gallery</div>
+			</div>	
 			
-				<style type="text/css" scoped>
-					
-				</style>
-			
-				<div class="article">
-					<p>FEW PLACES ON EARTH can trade as robustly in travel fantasy fulfillment as Rome. Grandeur and grit meet in its narrow, shade-dappled streets and in the patrician stretches of its piazzas. Its pearlescent light can tease a sacred beauty out of even the most profane, tourist-thronged scene, and its citizens can turn as banal an act as taking out the garbage into a master class in insouciant comportment (the word for which, incidentally, is sprezzatura—an inimitably Italian quality that Romans seem to have a corner on). Most inspiring of all, the appeal of the timeless and the electric draw of the now merge more dynamically here than in any other European city. Neighborhoods in the heart of town—the ones we thought we knew—have been reinvigorated with stylish hotels and boutiques. And as in places like London and New York, where the outer boroughs are the new centers of gravity, districts farther afield are being transformed by a creative group of chefs and shop owners. This is your guide to the city’s sweet spots, where tradition and innovation are in perfect balance.</p>
-					
-					<div class="inline-photo" style="position: relative;left: -80px;width: 768px;overflow: hidden;margin: 64px 0;z-index:-1;">
-						<img src="images/rome/0314-TR-WERO02.png" style="width: 100%;" alt="" />
-					</div>
-					
-					<h3>Centro Storico</h3>
-					
-					<p>Lots of people recognize the Via Giulia in photos, since it’s one of the most photogenic streets in Rome; probably not quite as many know it firsthand, tucked as it is into a curve of the Tiber, away from the more heavily trod reaches of the Centro Storico. Fewer still are familiar with its illustrious pedigree: The half-mile-long, ruler-straight stretch of sanpietrini stones was constructed in 1508 by Donato Bramante, on the order of Pope Julius II, as one of Renaissance Rome’s first major urban-renewal projects. Lined with sixteenth- and seventeenth-century noble palaces and divided by an ivy-covered arch designed by Michelangelo, it passes through the ancient districts of Ponte and Regola. It is tranquil, beautiful, and seriously posh.</p>
-					
-					<p>It’s here that the architect Antonio Girardi has opened D.O.M, a 24-room hotel in a former Cla­re­tian monastery. The building’s exterior is typical Roman pastel-washed prettiness, but inside the palette is all whites, grays, and browns punctuated by rich linens and velvets, brass, and leather furniture. Beneath the coffered ceilings, the walls are inlaid with 400-year-old flagstones from the nearby Church of Santa Lucia del Gonfalone, installed in the nineteenth century and embossed with Latin liturgical exhortations commencing with D.O.M, the acronym for Deo Optimo Maximo (“To God, most good, most great”).</p>
-					
-					<ul style="position: relative;left: -80px;width: 768px;overflow: hidden;margin: 64px 0;z-index: -1;" class="clearfix">
-						<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0 20px 0 0;">
-							<img src="images/rome/0314-TR-WERO03.png" style="width: 100%;" alt="" />
-						</li>
-						<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0;">
-							<img src="images/rome/0314-TR-WERO03-2.png" style="width: 100%;" alt="" />
-						</li>
-					</ul>
-					
-					<p>The relative calm here belies an unbeatable central location. A hop to the south end of the street and a skip across the Ponte Sisto take you to the Piazza Trilussa, gateway to the humming bars and trendy boîtes of Trastevere. Some of Rome’s best shopping is on the neighboring Via dei Pellegrini, Via di Monserrato, and Via dei Banchi Vecchi, where Laura Urbinati sells her signature monochrome bikinis, which can be spotted on beaches from Gallipoli to Cap­albio. It’s a five-minute stroll to the genial chaos of the Campo dei Fiori and, five minutes beyond that, the Via dei Giubbonari, where you’ll find the beloved salumeria/­wine bar Roscioli. Everyone extols brothers Alessandro and Pierluigi Roscioli’s genius, from the prosciutto-studded bread to what has to be the city’s most faultless cacio e pepe. (Perhaps the thing it hasn’t perfected is amiable and refined service—but no one in Rome should expect that.) A takeout baccalà sandwich wrapped in paper from Dar Filettaro—a block up from Roscioli, set back from the street in a tiny piazzetta—is a greasier, messier, but equally transporting affair.</p>
-					
-					<p>Between D.O.M and the Piazza Navona lies the Via del Governo Vecchio. This is Rome’s answer to New York’s Elizabeth Street in Nolita: home to independent boutiques and a couple of superlative vintage emporiums, where anyone with a hundred-odd euros and a serious inclination to dig can turn up gems like a ladies’ Belstaff motorcycle jacket circa 1974. The street’s appeal was enhanced with the arrival of jewelry designer Delfina Delettrez—daughter of Silvia Venturini Fendi—who opened her first boutique here in 2011. Delettrez’s totemic design motifs—evil eyes, skulls, jewel-­encrusted spiders, and attenuated bones recalling reliquaries—are as beautiful as they are provocative. Equally imaginative are the jewelry designs by Paolo Giacomelli and Roberta Paolucci at Iosselliani R-01-IOS, where the pieces incorporate brass and silver into chain mail or tribal feather motifs.</p>
-					
-					<p>Just around the corner from Iosselliani is D.O.M’s primary competition. J.K. Place Roma is the third J.K. hotel from Florentine entrepreneur Ori Kafri. Its 30 rooms are a stylish retrofit of a former school, situated about halfway between the august angles of Richard Meier’s Ara Pacis Museum and the sceney Piazza San Lorenzo in Lucina. (Ciampini, at number 29 on the piazza, is your HQ here: perfect morning espresso stop; humming aperitivo scene; best pistachio gelato in town; air-kissing all day.) The hotel’s flamboyant style favors neutrals doused with color (corridors are upholstered in turquoise and lime raw silk) and reproduction antiquities rubbing marble shoulders with mid-century designs. The hotel achieved cachet with the Roman movida more or less from the day it opened; it’s an ideal place to feel at the center of things.</p>
-					
-					<h3>Monti</h3>
-					
-					<p>Wedged between the crumbling monoliths of the Imperial Fora and the staid government palaces of Quirinal Hill, the lemon-and-apricot facades lining Monti’s eighteenth-century streets are lovely, if not terrifically distinct from those in many other parts of town. Over the last several years, though, a new generation of adoptive Monticiani have given it an indie vibrancy that’s made it a destination in its own right. This is evident in the “kilometer-zero” mantra of Urbana 47, an industrial-chic space serving hyper-locally sourced meats and produce (an adjacent art-house movie theater, Cinema Urbana 47, made its debut in 2012). At Aromaticus, owners Luca De Marco and Francesca Lombardi bring culinary bona fides—they worked in Rome as the chef at Open Baladin and the sommelier at Open Colonna, respectively—to their bistro meets urban farming emporium. In addition to the potted herbs, designer trowels, and organic produce, there’s an excellent lunch menu of salads, cheese plates, and charcuterie to complement Luca’s sublime steak tartare. At the black-and-white-tiled Gaudeo, you’ll find the paradigm of the paninoteca: There are myriad combinations available, but stick to two or three ingredients in your panino (the turkey and Sardinian goat’s milk ricotta is a favorite) so that the quality of each really shines.</p>
-					
-					<p>Shop owners and designers likewise find Monti’s streets friendly to the trade of the quirky and the twice-loved (after the Via del Governo Vecchio, Monti has the city’s best vintage stores). The women’s fashion shop B stocks the often-monochromatic designs (the B is for both black and bianco) of independent and established European labels, from Faliero Sarti pashminas to Céline trousers. At DOP Concept Store, Arabella Valdieri sources only a few pieces from niche labels to supplement her own small line of soft, deconstructed separates—whether you walk out with a kidskin clutch or a slim linen sundress, chances are you’ll be the only one back home with it. And of course, if it’s Saturday or Sunday, you’ll hit the Mercato Monti. What used to be a better-than-most flea market has evolved into a showcase of small purveyors selling handmade goods and first-rate vintage. On any given day, the mix might include 1950s jewelry, handmade leather sandals, and ’70s Gucci totes.</p>
-					
-					<h3>Testaccio and Ostiense</h3>
-					
-					<p>Baroque domes, pastel frescoes, wisteria-draped piazzette: You’ll find none of the quintessential Roman sights in Testaccio and Ostiense, which abut each other along the silver-brown stretch of the Tiber below Trastevere. Dirt and industry are deeply embedded in their DNA: Testaccio’s late-nineteenth- and early-twentieth-century grid of middle-class apartment buildings rests on ancient Roman landfill, comprising tens of thousands of terra-cotta urns abandoned millennia ago after being off-loaded from ships bearing supplies from the imperial provinces. Ostiense’s skyline is characterized as much by steel bridges and graffitied warehouses as by the famous Pyramid of Cestius; its premier museum, the Centrale Montemartini, is housed in a decommissioned power station.</p>
-					
-					<p>But what these two neighborhoods lack in camera-readiness they make up for in genuine urban buzz—and for food lovers, they are Rome’s place to be. Make a pilgrimage to the Testaccio Market, which still retains its special Roman brand of industrious cacophony, to stock up on prosciutto, fresh chicory, and just about everything in between, with a side trip to the 150-year-old delicatessen Volpetti, a must for hand-cut pasta, anchovies in Sicilian olive oil, or any one of the seven different preparations of artichokes.</p>
-					
-					<p>The new gastronomic nexus here is Porto Fluviale, a dining-drinking-snacking mecca spread across a 10,000-square-foot warehouse that was formerly part of the Magazzini Generali, Rome’s principal wholesale market. Now it’s a cavernous series of spaces finished with pale-brick walls, industrial work lamps, and reclaimed-wood shelves offering a staggering bounty of Italian gastronomia. There’s a bar that hums from late morning to the wee hours—the place for both a perfect espresso and a Campari spritz—along with a pizzeria centered around two massive wood ovens, one for thin-crust pizze romane, the other for the pillowy Neapolitan version. Elsewhere there’s a tapas bar, a patisserie/tearoom, and a lounge stocked with leather club chairs and chesterfield sofas.</p>
-					
-					<p>Due northeast of Porto Fluviale is the former Ostiense Air Terminal, home since June 2012 to Eataly, a four-story hymn to all that is superlative in Italian gastronomy and viticulture (it has a sister location in New York). The country’s finest chefs make regular guest appearances in its show kitchens, and some of its best-loved niche food specialists—Teo Musso for beer, Roberto Battaglia for mozzarella di bufala, Alessandro Frassica for panini, and Slow Food master Sergio Capaldo for meat—have dedicated premises here.</p>
-					
-					<h3>Pigneto</h3>
-					
-					<p>People will tell you that Pigneto is Rome’s Brooklyn. Whether you consider this a selling point or not, there is undeniably something of that borough’s cool to be found along the Via del Pigneto, an affiche-plastered pedestrian stretch set north of the rusted train tracks radiating out from Termini Station. A Communist enclave in the early 1900s, then a dodgy area known for drugs and prostitution, Pigneto has spent the last few years getting fancied up—although you might still be treated to an authentic street brawl when dining alfresco at Primo. The restaurant is a stalwart of the Pigneto scene, a place where the lackadaisical service is offset by a few standout dishes, among them a heavenly fava puree topped with burrata. Primo’s Tricker’s-wearing owners also have the nearby Rosti, whose menu mixes maremmana-beef bur­gers and pastrami sandwiches with half a dozen pizze bianche and a Sunday-afternoon pasta al forno lunch.</p>
-					
-					<p>It’s a magnet for the neighborhood’s creative classes and young parents, whose little ones gambol freely in its 7,500-square-foot garden strung with fairy lights. And you’d be remiss not to stop in at Necci, an institution since 1924; Pasolini famously filmed (and slummed) here in the early ’60s, and now its English co-owner, Benjamin Hirst, an alumnus of Fergus Henderson’s kitchen, has given it a shabby-cool makeover and a refined-rustic menu. Anytime between 8 a.m. and 1 a.m., seven days a week, is a good time to go, given that Necci morphs throughout the day from coffee-and-cornetto pit stop to aperitivo hot spot to serious osteria turning out fresh takes on typical dishes, from artichokes to eel. The preponderance of whiskers and sockless brogues among the clientele may indeed suggest Brooklyn—but the flavors are unmistakably Rome.</p>
+			<div class="article">
+				<p>FEW PLACES ON EARTH can trade as robustly in travel fantasy fulfillment as Rome. Grandeur and grit meet in its narrow, shade-dappled streets and in the patrician stretches of its piazzas. Its pearlescent light can tease a sacred beauty out of even the most profane, tourist-thronged scene, and its citizens can turn as banal an act as taking out the garbage into a master class in insouciant comportment (the word for which, incidentally, is <em>sprezzatura</em>—an inimitably Italian quality that Romans seem to have a corner on). Most inspiring of all, the appeal of the timeless and the electric draw of the now merge more dynamically here than in any other European city. Neighborhoods in the heart of town—the ones we thought we knew—have been reinvigorated with stylish hotels and boutiques. And as in places like London and New York, where the outer boroughs are the new centers of gravity, districts farther afield are being transformed by a creative group of chefs and shop owners. This is your guide to the city's sweet spots, where tradition and innovation are in perfect balance.</p>
+				
+				<div class="inline-photo" style="position: relative;left: -88px;width: 768px;overflow: hidden;margin: 64px 0;z-index:-1;">
+					<img src="images/rome/0314-TR-WERO02.png" style="width: 100%;" alt="" />
 				</div>
+				
+				<h3>Centro Storico</h3>
+				
+				<p>Lots of people recognize the Via Giulia in photos, since it’s one of the most photogenic streets in Rome; probably not quite as many know it firsthand, tucked as it is into a curve of the Tiber, away from the more heavily trod reaches of the <span id="centro-storico" class="neighborhood">Centro Storico</span>. Fewer still are familiar with its illustrious pedigree: The half-mile-long, ruler-straight stretch of <em>sanpietrini</em> stones was constructed in 1508 by Donato Bramante, on the order of Pope Julius II, as one of Renaissance Rome’s first major urban-renewal projects. Lined with sixteenth- and seventeenth-century noble palaces and divided by an ivy-covered arch designed by Michelangelo, it passes through the ancient districts of Ponte and Regola. It is tranquil, beautiful, and seriously posh.</p>
+				
+				<p>It’s here that the architect Antonio Girardi has opened <span id="dom" class="venue">D.O.M</span>, a 24-room hotel in a former Cla­re­tian monastery. The building’s exterior is typical Roman pastel-washed prettiness, but inside the palette is all whites, grays, and browns punctuated by rich linens and velvets, brass, and leather furniture. Beneath the coffered ceilings, the walls are inlaid with 400-year-old flagstones from the nearby Church of Santa Lucia del Gonfalone, installed in the nineteenth century and embossed with Latin liturgical exhortations commencing with D.O.M, the acronym for Deo Optimo Maximo (“To God, most good, most great”).</p>
+				
+				<ul style="position: relative;left: -88px;width: 768px;overflow: hidden;margin: 64px 0;z-index: -1;" class="clearfix">
+					<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0 20px 0 0;">
+						<img src="images/rome/0314-TR-WERO03.png" style="width: 100%;" alt="" />
+					</li>
+					<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0;">
+						<img src="images/rome/0314-TR-WERO03-2.png" style="width: 100%;" alt="" />
+					</li>
+				</ul>
+				
+				<p>The relative calm here belies an unbeatable central location. A hop to the south end of the street and a skip across the Ponte Sisto take you to the Piazza Trilussa, gateway to the humming bars and trendy boîtes of Trastevere. Some of Rome’s best shopping is on the neighboring Via dei Pellegrini, Via di Monserrato, and Via dei Banchi Vecchi, where Laura Urbinati sells her signature monochrome bikinis, which can be spotted on beaches from Gallipoli to Cap­albio. It’s a five-minute stroll to the genial chaos of the Campo dei Fiori and, five minutes beyond that, the Via dei Giubbonari, where you’ll find the beloved salumeria/­wine bar Roscioli. Everyone extols brothers Alessandro and Pierluigi Roscioli’s genius, from the prosciutto-studded bread to what has to be the city’s most faultless cacio e pepe. (Perhaps the thing it hasn’t perfected is amiable and refined service—but no one in Rome should expect that.) A takeout baccalà sandwich wrapped in paper from Dar Filettaro—a block up from Roscioli, set back from the street in a tiny piazzetta—is a greasier, messier, but equally transporting affair.</p>
+				
+				<p>Between D.O.M and the Piazza Navona lies the Via del Governo Vecchio. This is Rome’s answer to New York’s Elizabeth Street in Nolita: home to independent boutiques and a couple of superlative vintage emporiums, where anyone with a hundred-odd euros and a serious inclination to dig can turn up gems like a ladies’ Belstaff motorcycle jacket circa 1974. The street’s appeal was enhanced with the arrival of jewelry designer Delfina Delettrez—daughter of Silvia Venturini Fendi—who opened her first boutique here in 2011. Delettrez’s totemic design motifs—evil eyes, skulls, jewel-­encrusted spiders, and attenuated bones recalling reliquaries—are as beautiful as they are provocative. Equally imaginative are the jewelry designs by Paolo Giacomelli and Roberta Paolucci at Iosselliani R-01-IOS, where the pieces incorporate brass and silver into chain mail or tribal feather motifs.</p>
+				
+				<p>Just around the corner from Iosselliani is D.O.M’s primary competition. J.K. Place Roma is the third J.K. hotel from Florentine entrepreneur Ori Kafri. Its 30 rooms are a stylish retrofit of a former school, situated about halfway between the august angles of Richard Meier’s Ara Pacis Museum and the sceney Piazza San Lorenzo in Lucina. (Ciampini, at number 29 on the piazza, is your HQ here: perfect morning espresso stop; humming aperitivo scene; best pistachio gelato in town; air-kissing all day.) The hotel’s flamboyant style favors neutrals doused with color (corridors are upholstered in turquoise and lime raw silk) and reproduction antiquities rubbing marble shoulders with mid-century designs. The hotel achieved cachet with the Roman movida more or less from the day it opened; it’s an ideal place to feel at the center of things.</p>
+				
+				<h3>Monti</h3>
+				
+				<p>Wedged between the crumbling monoliths of the Imperial Fora and the staid government palaces of Quirinal Hill, the lemon-and-apricot facades lining Monti’s eighteenth-century streets are lovely, if not terrifically distinct from those in many other parts of town. Over the last several years, though, a new generation of adoptive Monticiani have given it an indie vibrancy that’s made it a destination in its own right. This is evident in the “kilometer-zero” mantra of Urbana 47, an industrial-chic space serving hyper-locally sourced meats and produce (an adjacent art-house movie theater, Cinema Urbana 47, made its debut in 2012). At Aromaticus, owners Luca De Marco and Francesca Lombardi bring culinary bona fides—they worked in Rome as the chef at Open Baladin and the sommelier at Open Colonna, respectively—to their bistro meets urban farming emporium. In addition to the potted herbs, designer trowels, and organic produce, there’s an excellent lunch menu of salads, cheese plates, and charcuterie to complement Luca’s sublime steak tartare. At the black-and-white-tiled Gaudeo, you’ll find the paradigm of the paninoteca: There are myriad combinations available, but stick to two or three ingredients in your panino (the turkey and Sardinian goat’s milk ricotta is a favorite) so that the quality of each really shines.</p>
+				
+				<p>Shop owners and designers likewise find Monti’s streets friendly to the trade of the quirky and the twice-loved (after the Via del Governo Vecchio, Monti has the city’s best vintage stores). The women’s fashion shop B stocks the often-monochromatic designs (the B is for both black and bianco) of independent and established European labels, from Faliero Sarti pashminas to Céline trousers. At DOP Concept Store, Arabella Valdieri sources only a few pieces from niche labels to supplement her own small line of soft, deconstructed separates—whether you walk out with a kidskin clutch or a slim linen sundress, chances are you’ll be the only one back home with it. And of course, if it’s Saturday or Sunday, you’ll hit the Mercato Monti. What used to be a better-than-most flea market has evolved into a showcase of small purveyors selling handmade goods and first-rate vintage. On any given day, the mix might include 1950s jewelry, handmade leather sandals, and ’70s Gucci totes.</p>
+				
+				<h3>Testaccio and Ostiense</h3>
+				
+				<p>Baroque domes, pastel frescoes, wisteria-draped piazzette: You’ll find none of the quintessential Roman sights in Testaccio and Ostiense, which abut each other along the silver-brown stretch of the Tiber below Trastevere. Dirt and industry are deeply embedded in their DNA: Testaccio’s late-nineteenth- and early-twentieth-century grid of middle-class apartment buildings rests on ancient Roman landfill, comprising tens of thousands of terra-cotta urns abandoned millennia ago after being off-loaded from ships bearing supplies from the imperial provinces. Ostiense’s skyline is characterized as much by steel bridges and graffitied warehouses as by the famous Pyramid of Cestius; its premier museum, the Centrale Montemartini, is housed in a decommissioned power station.</p>
+				
+				<p>But what these two neighborhoods lack in camera-readiness they make up for in genuine urban buzz—and for food lovers, they are Rome’s place to be. Make a pilgrimage to the Testaccio Market, which still retains its special Roman brand of industrious cacophony, to stock up on prosciutto, fresh chicory, and just about everything in between, with a side trip to the 150-year-old delicatessen Volpetti, a must for hand-cut pasta, anchovies in Sicilian olive oil, or any one of the seven different preparations of artichokes.</p>
+				
+				<p>The new gastronomic nexus here is Porto Fluviale, a dining-drinking-snacking mecca spread across a 10,000-square-foot warehouse that was formerly part of the Magazzini Generali, Rome’s principal wholesale market. Now it’s a cavernous series of spaces finished with pale-brick walls, industrial work lamps, and reclaimed-wood shelves offering a staggering bounty of Italian gastronomia. There’s a bar that hums from late morning to the wee hours—the place for both a perfect espresso and a Campari spritz—along with a pizzeria centered around two massive wood ovens, one for thin-crust pizze romane, the other for the pillowy Neapolitan version. Elsewhere there’s a tapas bar, a patisserie/tearoom, and a lounge stocked with leather club chairs and chesterfield sofas.</p>
+				
+				<p>Due northeast of Porto Fluviale is the former Ostiense Air Terminal, home since June 2012 to Eataly, a four-story hymn to all that is superlative in Italian gastronomy and viticulture (it has a sister location in New York). The country’s finest chefs make regular guest appearances in its show kitchens, and some of its best-loved niche food specialists—Teo Musso for beer, Roberto Battaglia for mozzarella di bufala, Alessandro Frassica for panini, and Slow Food master Sergio Capaldo for meat—have dedicated premises here.</p>
+				
+				<h3>Pigneto</h3>
+				
+				<p>People will tell you that Pigneto is Rome’s Brooklyn. Whether you consider this a selling point or not, there is undeniably something of that borough’s cool to be found along the Via del Pigneto, an affiche-plastered pedestrian stretch set north of the rusted train tracks radiating out from Termini Station. A Communist enclave in the early 1900s, then a dodgy area known for drugs and prostitution, Pigneto has spent the last few years getting fancied up—although you might still be treated to an authentic street brawl when dining alfresco at Primo. The restaurant is a stalwart of the Pigneto scene, a place where the lackadaisical service is offset by a few standout dishes, among them a heavenly fava puree topped with burrata. Primo’s Tricker’s-wearing owners also have the nearby Rosti, whose menu mixes maremmana-beef bur­gers and pastrami sandwiches with half a dozen pizze bianche and a Sunday-afternoon pasta al forno lunch.</p>
+				
+				<p>It’s a magnet for the neighborhood’s creative classes and young parents, whose little ones gambol freely in its 7,500-square-foot garden strung with fairy lights. And you’d be remiss not to stop in at Necci, an institution since 1924; Pasolini famously filmed (and slummed) here in the early ’60s, and now its English co-owner, Benjamin Hirst, an alumnus of Fergus Henderson’s kitchen, has given it a shabby-cool makeover and a refined-rustic menu. Anytime between 8 a.m. and 1 a.m., seven days a week, is a good time to go, given that Necci morphs throughout the day from coffee-and-cornetto pit stop to aperitivo hot spot to serious osteria turning out fresh takes on typical dishes, from artichokes to eel. The preponderance of whiskers and sockless brogues among the clientele may indeed suggest Brooklyn—but the flavors are unmistakably Rome.</p>
 			</div>
 		
 		</div>
