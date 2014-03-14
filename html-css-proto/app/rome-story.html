@@ -44,12 +44,15 @@
 		.holder { position: absolute;text-align: center;width: 100%; }
 		.label { font-family: Circular; font-size:14px; font-weight: normal; font-style: normal; text-transform: none; letter-spacing:normal; color: #00AEEF; }
 		.white { color:white; }
-		#overlay { width: 768px; height: 1024px; background-color: rgba(255,255,255,0.9);position: fixed;top: 0;left: 0;z-index: 1; }
-		.price-range { margin: 10px 0 10px 0; padding: 0; }
+		#overlay { width: 768px; height: 1024px; background-color: rgba(255,255,255,0.95);position: fixed;top: 0;left: 0;z-index: 1; }
+		.price-range { margin: 10px 0 10px 0; padding: 0; display: inline-block; }
 		.price-symbol { float: left; font-family: venuesymbols; font-size: 32px; color: #e4e4e4; margin: 0 8px 0 0; padding: 0; }
 		.price-symbol.on { color: #00AEEF; }
 		.price-symbol:last-of-type { margin-right: 0; }
-		.location { width: 500px; height: 768px; position: absolute; }
+		.location { width: 400px; height: 668px; position: absolute; top: 128px; left: 134px; padding: 50px; text-align: center; }
+		.location .map { width: 400px; height: 300px; }
+		.location .name { font-family: Farnham; font-size: 56px; padding: 20px 0; font-weight: 100; }
+		.location.dom .map { background-image: url(images/rome/map-centro-storico.png);background-position: 0 0; background-repeat: no-repeat; background-size: 100% auto; }
 	</style>
 	
 </head>

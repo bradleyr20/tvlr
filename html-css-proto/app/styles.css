@@ -162,6 +162,13 @@
 	font-weight: normal;
 }
 
+@font-face
+{
+	font-family: venuesymbols;
+	src: url(../fonts/venue-symbols.ttf);
+	font-weight: normal;
+}
+
 
 
 /* new clearfix */
