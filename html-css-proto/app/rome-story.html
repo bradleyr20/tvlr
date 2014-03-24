@@ -14,11 +14,11 @@
 	
 	<style type="text/css">
 		#story { position: relative;width: 768px;margin: 0;padding: 0; }
-		#story #header { height: 30px;width: 768px;top: 0;left: 0;position: fixed; }
-		#header #nav-activation { font-family: cntsymbols;font-size: 15px;color: #000;opacity: 0.35;position: absolute;top: 15px;left: 20px; }
+		#story #header { height: 30px;width: 768px;top: 0;left: 0;position: fixed; z-index: 10; }
+		#nav-activation { font-family: cntsymbols;font-size: 15px;color: #000;opacity: 0.35;position: absolute;top: 15px;left: 20px; }
 		#share-activation { float: right;font-family: cntsymbols;font-size: 16px;color: #000;opacity: 0.35;position: absolute;top: 13px;right: 20px; }
 		#story #body { width: 768px;position: absolute;top: 0;left: 0; }
-		#lede { width: 768px;text-align: center; }
+		#lede { width: 768px; height: 640px; position: relative; }
 		#lede .copy { width: 668px;position:absolute;top:115px;left:50px;margin:0;padding: 0;text-align:center; }
 		#lede .image-holder { width: 768px;height: 640px;overflow: hidden;position: absolute;top: 0;left: 0;z-index: -1; }
 		#lede .image-holder img { width: 100%;position: absolute;top: 0;left: 0; }
@@ -30,14 +30,15 @@
 		#lede .contributors .role { font-family: Farnham;font-size: 15px;line-height: 18px;font-style: italic;color: black;font-weight: 100; }
 		#lede .contributors .contributor { font-family: Circular;font-size: 15px;line-height: 15px;font-style: normal;color: black;font-weight: normal; }
 		#lede .contributors .separator { font-family: Fontawesome; font-size: 42px; line-height: 5px; margin: 0 9px 0 4px; color: rgba(0, 0, 0, 1); }
-		#story .article { text-align: left;width: 608px; padding: 10px 0 100px 0; margin: 0 auto; left: 88px; position: relative; border-top: 1px solid #e4e4e4;position: absolute; top: 1050px; }
-		#story .article p { font-family: Farnham;font-weight: normal;font-style: normal;font-size: 22px;line-height: 40px;margin: 40px 0 0 0; }
-		#story .article h3 { font-family: Circular;font-size: 30px;font-weight: 100;margin: 60px 0 0 0;padding: 0;color: #666; }
-		span.neighborhood { color: #00aeef;font-family: Circular;font-weight: bold; }
-		span.neighborhood:hover, span.neighborhood:active { cursor: pointer; }
-		span.neighborhood::before { content: "";display: inline-block;width: 20px;height: 22px;background-image: url(images/map-pin-cnt-blue.svg);background-repeat: no-repeat;background-position-x: center;background-position-y: center;background-size: auto 100%;margin: 0 3px 0 0; }
-		#photo-barrier { width: 768px;background-color: rgba(0,0,0,1);height: 30px;top: 640px;position: absolute; }
-		.map-inset { display: block; width:300px;height:300px;border:1px solid white;border-radius: 150px;box-shadow: 0px 5px 10px #666;overflow:hidden; background-image: url(images/rome-map-300x300.png); background-position: 0 0; background-repeat: no-repeat; margin: 0 auto;position: absolute;top: 505px;left: 234px; }
+		#story .article { margin: 0; padding: 0; }
+		.article .section { text-align: left;padding: 60px 88px; margin: 0;background-color: white; }
+		.article .section p { font-family: Farnham;font-weight: normal;font-style: normal;font-size: 22px;line-height: 40px;margin: 40px 0 0 0; }
+		.article .section h3 { font-family: Circular;font-size: 30px;font-weight: 100;margin: 60px 0 0 0;padding: 0;color: #666; }
+		span.neighborhood, span.venue { color: #00aeef;font-family: Circular;font-weight: bold;white-space: nowrap; }
+		span.neighborhood:hover, span.neighborhood:active, span.venue:hover, span.venue:active { cursor: pointer; }
+		span.neighborhood::before, span.venue::before { content: "";display: inline-block;width: 20px;height: 22px;background-image: url(images/map-pin-cnt-blue.svg);background-repeat: no-repeat;background-position-x: center;background-position-y: center;background-size: auto 100%;margin: 0 3px 0 0; }
+		#photo-barrier { width: 768px;background-color: rgba(0,0,0,1);height: 2px;top: 640px;position: absolute; }
+		.map-inset { display: block; width:300px;height:300px;border:1px solid white;border-radius: 150px;box-shadow: 0px 5px 10px #666;overflow:hidden; background-image: url(images/rome-map-300x300.png); background-position: 0 0; background-repeat: no-repeat; margin: 0 auto;/*position: absolute;top: 505px;left: 234px;*/ }
 		.link { width: 62px;height: 62px;background-color: black;background-repeat: no-repeat;background-position: center;border-radius: 31px;box-shadow: 0px 3px 6px #666; display: block; }
 		.trip-map.link { background-image: url(images/itinerary-map-icon-blue.svg);background-size: 65% auto; position: absolute; top: 773px; left: 353px; }
 		.slideshow.link { background-image: url(images/slideshow-icon-blue.svg);background-color: black;background-size: 75% auto;position: absolute; top: 900px; left: 353px; }
@@ -45,14 +46,29 @@
 		.label { font-family: Circular; font-size:14px; font-weight: normal; font-style: normal; text-transform: none; letter-spacing:normal; color: #00AEEF; }
 		.white { color:white; }
 		#overlay { width: 768px; height: 1024px; background-color: rgba(255,255,255,0.95);position: fixed;top: 0;left: 0;z-index: 1; }
-		.price-range { margin: 10px 0 10px 0; padding: 0; display: inline-block; }
+		.price-range { margin: 20px 0; padding: 0; display: inline-block; }
 		.price-symbol { float: left; font-family: venuesymbols; font-size: 32px; color: #e4e4e4; margin: 0 8px 0 0; padding: 0; }
 		.price-symbol.on { color: #00AEEF; }
 		.price-symbol:last-of-type { margin-right: 0; }
 		.location { width: 400px; height: 668px; position: absolute; top: 128px; left: 134px; padding: 50px; text-align: center; }
-		.location .map { width: 400px; height: 300px; }
-		.location .name { font-family: Farnham; font-size: 56px; padding: 20px 0; font-weight: 100; }
-		.location.dom .map { background-image: url(images/rome/map-centro-storico.png);background-position: 0 0; background-repeat: no-repeat; background-size: 100% auto; }
+		.location .map { width: 400px; height: 300px; background-position: 0 0; background-repeat: no-repeat; background-size: 100% auto; }
+		.location .name { font-family: Farnham; font-size: 48px; line-height: 48px; padding: 20px 0 0; font-weight: 100; }
+		.location.dom .map { background-image: url(images/rome/map-dom-hotel.png); }
+		.location.centro-storico .map { background-image: url(images/rome/map-centro-storico.png); }
+		.location.laura-urbinati .map { background-image: url(images/rome/map-laura-urbinati.png); }
+		.location.roscioli .map { background-image: url(images/rome/map-roscioli.png); }
+		.location.dar-filettaro .map { background-image: url(images/rome/map-dar-filettaro.png); }
+		.location .address, .location .phone, .location .website { font-family: Circular;font-size: 16px; color: #666; margin: 10px 0 0; padding: 0; }
+		.location .phone { margin-top: 0; }
+		.location .website { color: #00aeef; }
+		.location .website:hover, .location .website:active { text-decoration: underline; cursor: pointer; }
+		.inline-photo { width: 768px;overflow: hidden;margin: 0;z-index:-1; }
+		.inline-photo.duo { width: 768px;overflow: hidden;margin: 0;z-index: -1; }
+		.inline-photo.duo .paired.image { width: 374px;height: 467px;overflow: hidden;float: left;margin: 0 20px 0 0; }
+		.inline-photo.duo .paired.image.right { margin-right: 0; }
+		.inline-photo img { width: 100%; }
+		.article .caption { font-family: Circular;font-size: 16px;text-align:center; margin: 20px 0;padding:0 90px;color:#7e7e7e; }
+		.duo-indicator { font-weight: 900; font-size: 12px; color: #4a4a4a; }
 	</style>
 	
 </head>
@@ -70,7 +86,7 @@
 			<div id="overlay">
 				<ul class="location neighborhood centro-storico">
 					<li class="map"></li>
-					<li class="name"></li>
+					<li class="name">Centro Storico, Roma</li>
 					<li class="address"></li>
 					<li class="phone"></li>
 					<li class="website"></li>
@@ -78,7 +94,7 @@
 				<ul class="location venue hotel dom">
 					<li class="map"></li>
 					<li class="name">D.O.M.</li>
-					<li class="address"></li>
+					<li class="address">via Giulia, 131 / 00186 Rome, RM, Italy</li>
 					<li>
 						<ul class="price-range clearfix">
 							<li class="price-symbol on">&#xe800;</li>
@@ -86,10 +102,54 @@
 							<li class="price-symbol">&#xe800;</li>
 						</ul>
 					</li>
-					<li class="phone"></li>
+					<li class="phone">+ 39 06 6832144</li>
+					<li class="website">domhotelroma.com</li>
+				</ul>
+				<ul class="location venue shop laura-urbinati">
+					<li class="map"></li>
+					<li class="name">Laura Urbinati Swimwear</li>
+					<li class="address">Via dei Banchi Vecchi, 50, 00186 Roma, Italy</li>
+					<li>
+						<ul class="price-range clearfix">
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol">&#xe800;</li>
+						</ul>
+					</li>
+					<li class="phone">+39 06 6813 6478</li>
+					<li class="website">lauraurbinati.com</li>
+				</ul>
+				
+				<ul class="location venue shop roscioli">
+					<li class="map"></li>
+					<li class="name">Salumeria Roscioli</li>
+					<li class="address">Via dei Giubbonari, 21/22, 00186 Roma Italy</li>
+					<li>
+						<ul class="price-range clearfix">
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol">&#xe800;</li>
+						</ul>
+					</li>
+					<li class="phone">+39 06 687 5287</li>
+					<li class="website">salumeriaroscioli.com</li>
+				</ul>
+				
+				<ul class="location venue shop dar-filettaro">
+					<li class="map"></li>
+					<li class="name">Dar Filettaro</li>
+					<li class="address">Largo dei Librari, 88, 186 Roma, Italy</li>
+					<li>
+						<ul class="price-range clearfix">
+							<li class="price-symbol on">&#xe800;</li>
+							<li class="price-symbol">&#xe800;</li>
+							<li class="price-symbol">&#xe800;</li>
+						</ul>
+					</li>
+					<li class="phone">+39 06 686 4018</li>
 					<li class="website"></li>
 				</ul>
-			</div>
+			</div><!--end of overlay with venues-->
 		
 			<div id="lede" class="clearfix">
 			<!--lede material-->
@@ -102,51 +162,70 @@
 					<h2 class="dek">10 Days in the New Rome: Fresh Hotels, Timeless Trattorias</h2>
 					<ul class="contributors clearfix">
 						<li class="role">Words</li>
-						<li class="contributor">Laura Giannatempo</li>
+						<li class="contributor">Maria Schollenbarger</li>
 						<li class="separator">&lowast;</li>
 						<li class="role">Pictures</li>
-						<li class="contributor">Crick Crack Crock</li>
+						<li class="contributor">Gentl &amp; Hyers</li>
 					</ul>
 				</div>
 			</div><!--end of lede-->
 			
-			<div id="photo-barrier"></div>
-			
-			<div class="map-inset"></div>
-			<div class="trip-map link"></div>
-			<div class="holder" style="top: 845px;">
-				<div class="label">View the places mentioned in this story on a map</div>
-			</div>
-			<div class="slideshow link"></div>
-			<div class="holder" style="top: 973px;">
-				<div class="label">View this story's photos in a gallery</div>
-			</div>	
-			
 			<div class="article">
+			<div class="section">
 				<p>FEW PLACES ON EARTH can trade as robustly in travel fantasy fulfillment as Rome. Grandeur and grit meet in its narrow, shade-dappled streets and in the patrician stretches of its piazzas. Its pearlescent light can tease a sacred beauty out of even the most profane, tourist-thronged scene, and its citizens can turn as banal an act as taking out the garbage into a master class in insouciant comportment (the word for which, incidentally, is <em>sprezzatura</em>—an inimitably Italian quality that Romans seem to have a corner on). Most inspiring of all, the appeal of the timeless and the electric draw of the now merge more dynamically here than in any other European city. Neighborhoods in the heart of town—the ones we thought we knew—have been reinvigorated with stylish hotels and boutiques. And as in places like London and New York, where the outer boroughs are the new centers of gravity, districts farther afield are being transformed by a creative group of chefs and shop owners. This is your guide to the city's sweet spots, where tradition and innovation are in perfect balance.</p>
 				
-				<div class="inline-photo" style="position: relative;left: -88px;width: 768px;overflow: hidden;margin: 64px 0;z-index:-1;">
-					<img src="images/rome/0314-TR-WERO02.png" style="width: 100%;" alt="" />
+				<div class="map-inset"></div>
+				<div class="trip-map link"></div>
+				<div class="holder">
+					<div class="label">View the places mentioned in this story on a map</div>
 				</div>
+				<div class="slideshow link"></div>
+				<div class="holder">
+					<div class="label">View this story's photos in a gallery</div>
+				</div>
+			</div><!--end of section-->
 				
+				<div class="inline-photo">
+					<img src="images/rome/0314-TR-WERO02.png" alt="" />
+				</div>
+				<div class="caption"><em>Cafe, senza cornetto</em> at J.K. Place Roma</div>
+				
+			<div class="section"><!--start of section-->
 				<h3>Centro Storico</h3>
 				
 				<p>Lots of people recognize the Via Giulia in photos, since it’s one of the most photogenic streets in Rome; probably not quite as many know it firsthand, tucked as it is into a curve of the Tiber, away from the more heavily trod reaches of the <span id="centro-storico" class="neighborhood">Centro Storico</span>. Fewer still are familiar with its illustrious pedigree: The half-mile-long, ruler-straight stretch of <em>sanpietrini</em> stones was constructed in 1508 by Donato Bramante, on the order of Pope Julius II, as one of Renaissance Rome’s first major urban-renewal projects. Lined with sixteenth- and seventeenth-century noble palaces and divided by an ivy-covered arch designed by Michelangelo, it passes through the ancient districts of Ponte and Regola. It is tranquil, beautiful, and seriously posh.</p>
 				
 				<p>It’s here that the architect Antonio Girardi has opened <span id="dom" class="venue">D.O.M</span>, a 24-room hotel in a former Cla­re­tian monastery. The building’s exterior is typical Roman pastel-washed prettiness, but inside the palette is all whites, grays, and browns punctuated by rich linens and velvets, brass, and leather furniture. Beneath the coffered ceilings, the walls are inlaid with 400-year-old flagstones from the nearby Church of Santa Lucia del Gonfalone, installed in the nineteenth century and embossed with Latin liturgical exhortations commencing with D.O.M, the acronym for Deo Optimo Maximo (“To God, most good, most great”).</p>
+			</div><!--end of section-->
 				
-				<ul style="position: relative;left: -88px;width: 768px;overflow: hidden;margin: 64px 0;z-index: -1;" class="clearfix">
-					<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0 20px 0 0;">
-						<img src="images/rome/0314-TR-WERO03.png" style="width: 100%;" alt="" />
+				<ul class="inline-photo duo" class="clearfix">
+					<li class="paired image left">
+						<img src="images/rome/0314-TR-WERO03.png" alt="" />
 					</li>
-					<li style="width: 374px;height: 467px;overflow: hidden;float: left;margin: 0;">
-						<img src="images/rome/0314-TR-WERO03-2.png" style="width: 100%;" alt="" />
+					<li class="paired image right">
+						<img src="images/rome/0314-TR-WERO03-2.png" alt="" />
 					</li>
 				</ul>
+				<div class="caption"><span class="duo-indicator">LEFT&nbsp;</span> Antonio Girardi, architect and co-owner of the 24-room hotel D.O.M. <span class="duo-indicator">&nbsp;RIGHT&nbsp;</span> the Colosseum, in the Monti neighborhood.</div>
 				
-				<p>The relative calm here belies an unbeatable central location. A hop to the south end of the street and a skip across the Ponte Sisto take you to the Piazza Trilussa, gateway to the humming bars and trendy boîtes of Trastevere. Some of Rome’s best shopping is on the neighboring Via dei Pellegrini, Via di Monserrato, and Via dei Banchi Vecchi, where Laura Urbinati sells her signature monochrome bikinis, which can be spotted on beaches from Gallipoli to Cap­albio. It’s a five-minute stroll to the genial chaos of the Campo dei Fiori and, five minutes beyond that, the Via dei Giubbonari, where you’ll find the beloved salumeria/­wine bar Roscioli. Everyone extols brothers Alessandro and Pierluigi Roscioli’s genius, from the prosciutto-studded bread to what has to be the city’s most faultless cacio e pepe. (Perhaps the thing it hasn’t perfected is amiable and refined service—but no one in Rome should expect that.) A takeout baccalà sandwich wrapped in paper from Dar Filettaro—a block up from Roscioli, set back from the street in a tiny piazzetta—is a greasier, messier, but equally transporting affair.</p>
+				<p>The relative calm here belies an unbeatable central location. A hop to the south end of the street and a skip across the Ponte Sisto take you to the Piazza Trilussa, gateway to the humming bars and trendy boîtes of Trastevere. Some of Rome’s best shopping is on the neighboring Via dei Pellegrini, Via di Monserrato, and Via dei Banchi Vecchi, where <span id="urbinati" class="venue">Laura Urbinati</span> sells her signature monochrome bikinis, which can be spotted on beaches from Gallipoli to Cap­albio. It’s a five-minute stroll to the genial chaos of the Campo dei Fiori and, five minutes beyond that, the Via dei Giubbonari, where you’ll find the beloved salumeria/­wine bar <span id="roscioli" class="venue">Roscioli</span>. Everyone extols brothers Alessandro and Pierluigi Roscioli’s genius, from the prosciutto-studded bread to what has to be the city’s most faultless cacio e pepe. (Perhaps the thing it hasn’t perfected is amiable and refined service—but no one in Rome should expect that.) A takeout baccalà sandwich wrapped in paper from <span id="dar-filettaro" class="venue">Dar Filettaro</span>—a block up from Roscioli, set back from the street in a tiny piazzetta—is a greasier, messier, but equally transporting affair.</p>
 				
-				<p>Between D.O.M and the Piazza Navona lies the Via del Governo Vecchio. This is Rome’s answer to New York’s Elizabeth Street in Nolita: home to independent boutiques and a couple of superlative vintage emporiums, where anyone with a hundred-odd euros and a serious inclination to dig can turn up gems like a ladies’ Belstaff motorcycle jacket circa 1974. The street’s appeal was enhanced with the arrival of jewelry designer Delfina Delettrez—daughter of Silvia Venturini Fendi—who opened her first boutique here in 2011. Delettrez’s totemic design motifs—evil eyes, skulls, jewel-­encrusted spiders, and attenuated bones recalling reliquaries—are as beautiful as they are provocative. Equally imaginative are the jewelry designs by Paolo Giacomelli and Roberta Paolucci at Iosselliani R-01-IOS, where the pieces incorporate brass and silver into chain mail or tribal feather motifs.</p>
+				<div class="inline-photo">
+					<img src="images/rome/0314-TR-WERO04.png" alt="" />
+				</div>
+				<div class="caption">The lounge at D.O.M is one of a number of spots for a nice cocktail in Rome.</div>
+				
+				<div class="inline-photo">
+					<img src="images/rome/0314-TR-WERO05.png" alt="" />
+				</div>
+				<div class="caption"><span><em>Pasta perfetta</em> at the salumeria/wine bar Roscioli, in the Centro Storico.</div>
+				
+				<div class="inline-photo">
+					<img src="images/rome/0314-TR-WERO06.png" alt="" />
+				</div>
+				<div class="caption">The Presentation Chapel in St. Peter's Basilica.</div>
+				
+				<p>Between D.O.M and the Piazza Navona lies the Via del Governo Vecchio. This is Rome’s answer to New York’s Elizabeth Street in Nolita: home to independent boutiques and a couple of superlative vintage emporiums, where anyone with a hundred-odd euros and a serious inclination to dig can turn up gems like a ladies’ Belstaff motorcycle jacket circa 1974. The street’s appeal was enhanced with the arrival of jewelry designer <span id="delfina-delettrez" class="venue">Delfina Delettrez</span>—daughter of Silvia Venturini Fendi—who opened her first boutique here in 2011. Delettrez’s totemic design motifs—evil eyes, skulls, jewel-­encrusted spiders, and attenuated bones recalling reliquaries—are as beautiful as they are provocative. Equally imaginative are the jewelry designs by Paolo Giacomelli and Roberta Paolucci at <span>Iosselliani R-01-IOS</span>, where the pieces incorporate brass and silver into chain mail or tribal feather motifs.</p>
 				
 				<p>Just around the corner from Iosselliani is D.O.M’s primary competition. J.K. Place Roma is the third J.K. hotel from Florentine entrepreneur Ori Kafri. Its 30 rooms are a stylish retrofit of a former school, situated about halfway between the august angles of Richard Meier’s Ara Pacis Museum and the sceney Piazza San Lorenzo in Lucina. (Ciampini, at number 29 on the piazza, is your HQ here: perfect morning espresso stop; humming aperitivo scene; best pistachio gelato in town; air-kissing all day.) The hotel’s flamboyant style favors neutrals doused with color (corridors are upholstered in turquoise and lime raw silk) and reproduction antiquities rubbing marble shoulders with mid-century designs. The hotel achieved cachet with the Roman movida more or less from the day it opened; it’s an ideal place to feel at the center of things.</p>
 				
