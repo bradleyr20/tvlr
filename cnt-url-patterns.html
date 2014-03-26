@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CNTraveler.com: URL Patterns</title>
+	<link rel="stylesheet" href="stylesheets/styles2.css">
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+		
+</head>
+<body>
+
+	<div style="text-align:left;width:768px;margin: 20px auto;">
+		
+		<h3>Expected URL Patterns</h3>
+		
+		<p>These are the expected patterns. Note that one or two are still under discussion. See linked xlsx or PDF for color-coded version.</p>
+		
+		<table id="channels-and-subchannels">
+		<colgroup>
+		<col style="text-align:left;"/>
+		<col style="text-align:left;"/>
+		<col style="text-align:left;"/>
+		<col style="text-align:left;"/>
+		</colgroup>
+		
+		<thead>
+		<tr>
+			<th style="text-align:left;">Content type</th>
+			<th style="text-align:left;">URL model</th>
+			<th style="text-align:left;">Examples</th>
+			<th style="text-align:left;">Notes</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<tr>
+			<td style="text-align:left;">Slideshows (Galleries)</td>
+			<td style="text-align:left;">/galleries/YYYY-MM-DD-slug/(photoId)</td>
+			<td style="text-align:left;">/galleries/2013&#8211;12&#8211;17-behind-the-scenes-at-the-best-restaurant-in-the-world</td>
+			<td style="text-align:left;"></td>
+		</tr>
+		<tr class="alternate">
+			<td style="text-align:left;">Stories</td>
+			<td style="text-align:left;">/stories/YYYY-MM-DD-slug</td>
+			<td style="text-align:left;">/stories/2014&#8211;01&#8211;01&#8211;9-reasons-to-visit-colorado-that-arent-pot-tourism</td>
+			<td style="text-align:left;">All punctuation, apostrophes, etc should be eliminated during translation from title to URL (rather than transformed into dashes; only spaces should become dashes)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;">Lists</td>
+			<td style="text-align:left;">/&lt;list-name&gt;/YYYY</td>
+			<td style="text-align:left;">/hot-list/2013<br>/gold-list/2014<br>/readers-choice-awards/2015</td>
+			<td style="text-align:left;">If user types in list name without year, should get directed to most recent year’s list page. Example: user types /hot-list, user gets /hot-list/2013</td>
+		</tr>
+		<tr class="alternate">
+			<td style="text-align:left;">Channel indexes</td>
+			<td style="text-align:left;">/&lt;channel-name&gt;</td>
+			<td style="text-align:left;">/food-and-drink<br>/style-and-design,</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;">Subchannel indexes</td>
+			<td style="text-align:left;">/&lt;channel-name&gt;/&lt;subchannel-name&gt;</td>
+			<td style="text-align:left;">/food-and-drink/food-trips<br>/arts-and-culture/music</td>
+			<td style="text-align:left;">Content on page is driven by combination of channel and subchannel, eg /food-and-drink/food-trips can display any story that has channel of food-and-drink PLUS subchannel of food-trips.<br>-<br>Priority of display order:<br>Stories with both &lt;channel-name&gt; and &lt;subchannel-name&gt; in PRIMARY (ie, first-in-list) positions<br>Stories with &lt;subchannel-name&gt; in PRIMARY position, &lt;channel-name&gt; in non-primary position<br>Stories with &lt;channel-name&gt; in PRIMARY posiiton, &lt;subchannel-name&gt; in non-primary position<br>Stories with NEITHER &lt;channel-name&gt; nor &lt;subchannel-name&gt; in primary position</td>
+		</tr>
+		<tr class="alternate">
+			<td style="text-align:left;">Special reports</td>
+			<td style="text-align:left;">/reports/YYYY-MM-DD-slug</td>
+			<td style="text-align:left;">/reports/2013&#8211;01&#8211;01-winter-travel</td>
+			<td style="text-align:left;"></td>
+		</tr>
+		<tr>
+			<td style="text-align:left;">Itineraries</td>
+			<td style="text-align:left;">/itineraries/slug</td>
+			<td style="text-align:left;">/itineraries/grand-tour-of-asia</td>
+			<td style="text-align:left;">Not available in release 1</td>
+		</tr>
+		<tr class="alternate">
+			<td style="text-align:left;">Venues</td>
+			<td style="text-align:left;">/&lt;destination OR city&gt;/&lt;venue-type&gt;/&lt;name-slug&gt;</td>
+			<td style="text-align:left;">/new-york-city/hotels/standard-high-line<br>/provence/shops/beau-de-provence-vin-et-fromage<br>/tuscany/hotels/castello-di-casole</td>
+			<td style="text-align:left;">The last nearest parent geotag will be used to fill &lt;destination OR city&gt;</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;">Destinations</td>
+			<td style="text-align:left;">/destinations/&lt;place-name&gt;</td>
+			<td style="text-align:left;">/destinations/new-york-city<br>/destinations/paris<br>/destinations/provence<br>/destinations/tuscany</td>
+			<td style="text-align:left;">Not available in release 1</td>
+		</tr>
+		<tr class="alternate">
+			<td style="text-align:left;">Contributors</td>
+			<td style="text-align:left;">/contributors/&lt;alias&gt;</td>
+			<td style="text-align:left;">/contributors/brad-rickman</td>
+			<td style="text-align:left;"></td>
+		</tr>
+		</tbody>
+		</table>
+		
+		<p>Excel version: https://drive.google.com/file/d/0B5oIVy5CEQC3RUxyZ2RIajlJamc/edit?usp=sharing</p>
+		
+		<p>PDF version: https://drive.google.com/file/d/0B5oIVy5CEQC3Q284Z3RCWHhqaGs/edit?usp=sharing</p>
+	
+	</div>
+
+</body>
+</html>
