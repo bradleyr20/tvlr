@@ -3,6 +3,11 @@
 $( document ).ready(function() {
  
     // Your code here.
+    
+//    $('#dom-lounge-photo').waypoint(function() {
+//      $('#dom-lounge-photo').toggleClass('fixed');
+//    });
+    
     $("#overlay").hide();
     
     $("#overlay").children().hide();

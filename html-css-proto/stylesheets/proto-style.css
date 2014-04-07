@@ -153,7 +153,7 @@ ul {
 	background-color: rgba(255,255,255,0.9);
 	margin: auto;
 	text-align: center;
-	padding: 25px 50px 50px;
+	padding: 25px 50px;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -169,7 +169,6 @@ ul {
 }
 
 #byline, #pub-time {
-	font-family: Graphik;
 	font-weight: normal;
 	font-size: 12px;
 	color: #7f7f7f;
@@ -185,7 +184,6 @@ ul {
 }
 
 #titlecard #dek {
-	font-family: Graphik;
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: normal;
@@ -194,7 +192,6 @@ ul {
 }
 
 .button {
-	font-family: GothamNarrow;
 	font-weight: bold;
 	font-size: 12px;
 	letter-spacing: 0.1em;
@@ -221,91 +218,112 @@ ul {
 
 #header {
 	background-color: #ffffff;
-	box-shadow: 0px 5px 5px #ccc;
+	box-shadow: 0px 3px 4px #ddd;
 	margin: 0;
 	padding: 0;
 }
 
 #header.collapsed {
 	height: 50px;
+	position: relative;
 }
 
-#header.collapsed .hed {
-	font-family: Mercury;
-	font-size: 21px;
-	letter-spacing: -0.02em;
-	color:#323232;
+#header.collapsed h1 {
+	font-family: Circular;
+	font-size: 16px;
+	color:#000000;
 	padding: 0;
 	font-weight: normal;
 	white-space: nowrap;
-	float:left;
-	margin:14px 10px 0 20px;
+	/*float:left;
+	margin:14px 10px 0 20px;*/
+	position: absolute;
+	top: 14px;
+	left: 200px;
 }
 
 #header.collapsed .share, #header.collapsed .subscribe {
-	font-family: Graphik;
-	font-weight: 500;
-	font-size: 12px;
-	color: #fb351c;
+	font-family: Circular;
+	font-size: 14px;
+	color: #00AEEF;
+	/*float: left;
+	margin: 19px 0 0 8px;
 	letter-spacing: 0.15em;
-	text-transform: uppercase;
-}
-
-#header.collapsed .share {
-	float:left;
-	margin:21px 0 0 8px;
+	text-transform: uppercase;*/
 }
 
 #header.collapsed .subscribe {
-	float:right; 
-	margin:21px 0 0 15px;
+	/*margin-left: 15px;*/
+	position: absolute;
+	top: 19px;
+	right: 44px;
 }
 
 #header.collapsed #share-icon {
-	width: 12px;
-	height: 13px;
-	background-image: url(images/share-icon-collapsed-nav-1024.png);
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/share-blue.svg);
 	background-repeat: no-repeat;
-	float:left;
-	margin:18px 0 0 15px;
+	background-size: auto 100%;
+	/*float:left;
+	margin:20px 0 0 15px;*/
+	position: absolute;
+	top: 18px;
+	right: 110px;
 }
 
 #header.collapsed #sponsor-credit {
-	float: left;
-	margin: ;
+	/*float: left;
+	margin: ;*/
 }
 
-#header.collapsed #hamburger {
+#header.collapsed #menu-cta {
 	width: 29px;
 	height: 15px;
-	background-image: url(images/hamburger-collapsed-nav-1024.png);
+	/*float:left;
+	margin: 19px 0 0 44px;*/
+	background-image: url(../images/hamburger.svg);
 	background-repeat: no-repeat;
-	float:left;
-	margin: 17px 0 0 44px;
+	background-size: auto 100%;
+	position: absolute;
+	top: 19px;
+	left: 44px;
 }
 
-#header.collapsed #hamburger:hover, #header.collapsed #hamburger:active {
-	background-image: url(images/hamburger-collapsed-nav-active-1024.png);
+#header.collapsed #menu-cta:hover, #header.collapsed #menu-cta:active {
+	background-image: url(../images/hamburger-blue.svg);
 	background-repeat: no-repeat;
 }
 
 #header.collapsed #logo {
-	width: 69px;
-	height: 25px;
-	background-image: url(images/logo-collapsed-header.png);
+	width: 90px;
+	height: 40px;
+	background-image: url(../images/new-CNT-logo-2014-000000.svg);
 	background-repeat: no-repeat;
-	float:left;
-	margin:11px 0 0 20px;
+	background-size: 100% auto;
+	/*float:left;
+	margin:9px 0 0 20px;*/
+	position: absolute;
+	top: 5px;
+	left: 90px;
 }
 
 #header.collapsed #search-icon {
 	width: 21px;
 	height: 21px;
-	background-image: url(images/search-icon-collapsed-nav.png);
+	background-image: url(../images/search-icon-collapsed.svg);
 	background-repeat: no-repeat;
-	float: right;
-	margin: 15px 43px 0 30px; 
+	background-size: auto 100%;
+	/*float: left;
+	margin: 15px 43px 0 30px;*/
+	position: absolute;
+	top: 17px;
+	right: 142px;
 }
+
+
+/* ---------------------------------------------- */
+
 
 #featured-slideshow {
 	text-align: center;
@@ -362,6 +380,8 @@ ul {
 	max-height: 574px;
 	max-width: 764px;
 }
+
+/* -------------------------------------------------- */
 
 #secondary {
 	width: 942px;
@@ -553,7 +573,7 @@ h3.recirc-tout {
 
 .leaderboard-holder {
 	text-align: center;
-	padding: 50px;
+	padding: 40px;
 	margin: 0;
 	border-bottom: 1px solid #e4e4e4;
 }
@@ -737,7 +757,7 @@ h3.recirc-tout {
 #body .leaderboard {
 	width: 726px;
 	height: 	88px;
-	margin: 15px auto 10px;
+	margin: 20px auto 0;
 	border: 1px solid #999;
 	background-color: #ccc;
 }
@@ -746,9 +766,22 @@ h3.recirc-tout {
 	text-align: center;
 }
 
+.channel-holder::after {
+	content: "";
+	width: 40px;
+	height: 3px;
+	background-color: black;
+	display: inline-block;
+	margin: 0 500px;
+	padding: 0;
+}
+
 #channel-heading .subchannel {
 	float: left;
 	margin: 0 2.25em 0 0;
+	font-family: Circular;
+	font-size: 12.5px;
+	font-weight: bold;
 }
 
 #channel-heading .subchannel:last-of-type {
@@ -806,6 +839,18 @@ ul.byline {
 	display: inline-block;
 	margin: 20px 0 0 0;
 }
+
+#titlecard ul.byline li {
+	font-size: 17px;
+	line-height: 19px;
+	color: white;
+}
+
+#titlecard ul.byline span.author {
+	font-size: 17px;
+	line-height: 17px;
+}
+
 ul.byline li {
 	float: left;
 	font-family: Farnham;
@@ -816,12 +861,13 @@ ul.byline li {
 	color: black;
 	margin: 0 5px 0 0;
 }
+
 ul.byline span.author {
 	font-family: Circular;
 	font-size: 15px;
+	line-height: 15px;
 	font-weight: bold;
 	font-style: normal;
-	line-height: 15px;
 }
 
 #index-channel .words {
@@ -829,12 +875,16 @@ ul.byline span.author {
 }
 
 #index-channel .section {
-	padding: 45px 54px 45px 52px;
+	padding: 30px 54px 30px 52px;
 	border-bottom: 1px solid #e4e4e4;
 }
 
 #index-channel .tout .subchannel {
 	display: inline-block;
+	font-family: Circular;
+	font-size: 13.5px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
 }
 
 #first-right-side-ad, #second-right-side-ad {
@@ -889,7 +939,7 @@ ul.byline span.author {
 }
 
 #top-stories .touts-row {
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 	border-bottom: 1px solid #e4e4e4;
 }
 
@@ -955,6 +1005,13 @@ ul.byline span.author {
 }
 #contributor-touts .tout .contributor-name {
 	padding: 20px 0 18px;
+	font-family: Circular;
+	font-size: 23px;
+	line-height: 24px;
+	font-weight: normal;
+	/*letter-spacing: 0.05em;*/
+	text-transform: none;
+	color: #00AEEF;
 }
 #contributor-touts .tout .contributor-name::after {
 	content: "";
@@ -965,6 +1022,7 @@ ul.byline span.author {
 	margin: 0 50px;
 	padding: 0;
 }
+
 #contributor-touts .tout .hed:hover, #contributor-touts .tout .hed:active {
 	text-decoration: underline;
 	cursor: pointer;
