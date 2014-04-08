@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/cnt-styles.css" />
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/proto-style.css" />
+	<script src="../../scripts/jquery-2.1.0.min.js"></script>
 	<title>Channel index - Travel Ideas - 1024px</title>
 	
 	<!--[if lt IE 9]>
@@ -15,6 +16,10 @@
 	<div id="container-tablet">
 	
 		<div id="index-channel">
+		
+		<div id="cm-unit-bottom-pinned" style="position: fixed; bottom: 0; left: 15%; width: 250px; height: 100px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.4); border-left: 1px solid rgba(255,255,255,0.4); border-right: 1px solid rgba(255,255,255,0.4); background-color: #00AEEF; box-shadow: 0px 3px 8px rgba(0,0,0,0.75);">
+			CM Unit goes here
+		</div>
 		
 			<div id="header-holder">
 				<div id="header" class="collapsed clearfix">
@@ -294,6 +299,18 @@
 		</div>
 		
 	</div>
+	
+	<script>
+	$( document ).ready(function() {
+//		var $document = $document;
+		
+		$( window ).scroll(function() {
+			if ($( window ).scrollTop() >= 50) {
+				$( "#cm-unit-bottom-pinned" ).slideUp();
+			}
+		});
+	});
+	</script>
 	
 </body>
 </html>
