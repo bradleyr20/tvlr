@@ -10,6 +10,19 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	
+	<style type="text/css">
+		.section-title { font-family: Circular; font-size: 14px; font-weight: bold; letter-spacing: 0.2em; }
+		.channel-holder { display: inline-block; text-align: center; padding: 0; margin: 18px 0 10px 0; }
+		#channel { text-align: center; display: inline-block; }
+		#channel li { display: table-cell; vertical-align: middle; }
+		#channel.sponsored .presented-by { padding: 0 10px 0 20px; }
+		#latest .touts .tout .hed { font-size: 20px; line-height: 23px; }
+		.display-d {
+			font-family: Circular; font-weight: bold; font-size: 15px;
+		}
+	</style>
+	
 </head>
 <body>
 
@@ -42,26 +55,6 @@
 				
 				<div id="channel-heading">
 					<div style="text-align: center;">
-					<style type="text/css" scoped>
-						.channel-holder {
-							display: inline-block;
-							text-align: center;
-							/*border-bottom: 1px solid #e4e4e4;*/
-							padding: 0;
-							margin: 18px 0 10px 0;
-						}
-						#channel {
-							text-align: center;
-							display: inline-block;
-						}
-						#channel li {
-							display: table-cell;
-							vertical-align: middle;
-						}
-						#channel.sponsored .presented-by {
-							padding: 0 10px 0 20px;
-						}
-					</style>
 						<div class="channel-holder">
 							<ul id="channel" class="sponsored">
 								<li class="headline-a" style="font-size: 60px;">travel ideas</li>
@@ -166,7 +159,7 @@
 				</div>
 				
 				<div id="contributor-touts" class="section">
-					<h3 class="display-c section-title">Latest Contributors</h3>
+					<h3 class="display-c section-title" style="">Latest Contributors</h3>
 					<ul class="touts-row clearfix">
 						<li class="tout">
 							<div class="image" style="background-image: url(../../images/travel-ideas/paul-brady.jpg);background-position-y: -38px;">&nbsp;</div>
