@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../stylesheets/cnt-styles.css" />
-	<link rel="stylesheet" type="text/css" href="../../stylesheets/proto-style.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/cnt-styles.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/proto-style.css" />
 	<title>Conde Nast Traveler</title>
 	
 	<style type="text/css">
 		#page-container { width: 1024px; overflow: hidden; margin:0; padding:0; }
 		#header-holder { position: relative; width: 1024px; top:0;left:0; }
 		#menu-icon { background-image: url(../images/hamburger-white.svg); position: absolute; top: 22px; left: 30px; width: 35px; height: 20px; background-repeat: no-repeat; opacity: 0.5; }
-		#lede { width: 1024px; height: 60%; background-color: blue; position: absolute; top: 0; left: 0; padding:0; }
-		#logo-holder { background-image: url(../images/new-CNT-logo-2014-FFFFFF.svg); position: absolute; top: 60px; left: 402px; width: 220px;height: 300px;background-size: 100% auto; background-repeat: no-repeat; }
-		#search-box-holder { position: absolute; top: 250px; left: 256px; width: 500px; border-bottom: 1px solid #FFF; padding: 6px; }
+		#lede { width: 1024px; height: 65%; position: absolute; top: 0; left: 0; padding:0; background-image: url(../app/images/rome/0314-TR-WERO06.png); background-repeat: no-repeat; background-size: 100% auto; }
+		#logo-holder { background-image: url(../images/new-CNT-logo-2014-FFFFFF.svg); position: absolute; top: 60px; left: 412px; width: 220px;height: 300px;background-size: 100% auto; background-repeat: no-repeat; }
+		#search-box-holder { width: 500px; margin: 200px auto 0; padding: 12px 6px 16px; background-color: rgba(255,255,255,0.25); font-family: Circular; font-size: 36px; color: rgba(255,255,255,0.6); font-weight: normal; }
+		#destinations-row { display: inline-block; margin: 40px auto 0; }
+		#destinations-row li { float: left; font-family: Circular; font-size: 16px; font-weight: bold; text-transform: uppercase; color: white; margin: 0 20px 0 0; }
+		#destinations-row li:last-of-type { margin-right: none; }
 	</style>
 	
 	<!--[if lt IE 9]>
@@ -27,8 +30,16 @@
 			<div id="header-holder">
 				<div id="menu-icon"></div>
 				<div id="logo-holder"></div>
-				<div id="search-box-holder"></div>
 			</div>
+			<div id="search-box-holder">Where do you want to be?</div>
+			<ul id="destinations-row" class="clearfix">
+			 <li>#Italy</li>
+			 <li>#France</li>
+			 <li>#Bermuda</li>
+			 <li>#Kolkatta</li>
+			 <li>#Peru</li>
+			</ul>
+			
 		</div><!--end of lede-->
 		
 	</div><!--end of page container-->

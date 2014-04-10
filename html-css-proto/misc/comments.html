@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/cnt-styles.css" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/proto-style.css" />
+	<script src="../../scripts/jquery-2.1.0.min.js"></script>
+	<title>Channel index - Travel Ideas - 1024px</title>
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<style type="text/css">
+		.section-title { font-family: Circular; font-size: 14px; font-weight: bold; letter-spacing: 0.2em; }
+		.channel-holder { display: inline-block; text-align: center; padding: 0; margin: 18px 0 10px 0; }
+		#channel { text-align: center; display: inline-block; }
+		#channel li { display: table-cell; vertical-align: middle; }
+		#channel.sponsored .presented-by { padding: 0 10px 0 20px; }
+		#latest .touts .tout .hed { font-size: 20px; line-height: 23px; }
+		.display-d { font-family: Circular; font-weight: bold; font-size: 15px; }
+		h3.headline-b.name {
+			font-family: Farnham; font-weight: 100; text-transform: none; font-size: 44px; line-height: 48px;
+		}
+		#featured-venue .from-callout { font-family: Circular; font-size: 11px; font-weight: bold; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; margin: 10px 0 0 0; }
+		#menu-bar-background { height: 50px; width: 100%; position: fixed; top: 0; background-color: rgba(255,255,255,0.97); box-shadow: 0px 3px 4px rgba(0,0,0,0.25); margin: 0; padding: 0; }
+		#header.collapsed { background-color: none; box-shadow: none; }
+	</style>
+	
+</head>
+<body>
+	
+	<div id="menu-bar-background"></div>
+	
+	<div id="container-tablet">
+	
+		<div id="comments-page">
+		
+		<!--<div id="cm-unit-bottom-pinned" style="position: fixed; bottom: 0; left: 15%; width: 250px; height: 100px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.4); border-left: 1px solid rgba(255,255,255,0.4); border-right: 1px solid rgba(255,255,255,0.4); background-color: yellow; box-shadow: 0px 3px 8px rgba(0,0,0,0.75);">
+			CM Unit goes here
+		</div>-->
+		
+			<div id="header-holder">
+				<div id="header" class="collapsed clearfix">
+					
+					<div id="menu-cta"></div>
+					<div id="logo"></div>
+					<div id="share-icon" style="right: 220px;"></div>
+					<div id="search-icon" style="right: 154px;"></div>
+					<!--<div class="share">Share</div>-->
+					<div class="subscribe">Subscribe</div>
+									
+				</div>
+			</div>
+			
+			<div id="page-body">
+			
+				
+				
+				<div id="cm-superfooter" style="width: 1024px;height: 544px;background-image: url(../../images/cm-superfooter.png);background-repeat: no-repeat;"></div>
+				
+				<div id="footer" style="margin: 0;padding: 0;">
+					<img src="../../images/footer.png" alt="" />
+				</div>
+			
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<script>
+	$( document ).ready(function() {
+//		var $document = $document;
+		
+		$( window ).scroll(function() {
+			if ($( window ).scrollTop() >= 50) {
+				$( "#cm-unit-bottom-pinned" ).slideUp();
+			}
+		});
+	});
+	</script>
+	
+</body>
+</html>
