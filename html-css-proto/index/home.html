@@ -4,18 +4,27 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../stylesheets/cnt-styles.css" />
 	<link rel="stylesheet" type="text/css" href="../stylesheets/proto-style.css" />
+	<script src="../scripts/jquery-2.1.0.min.js"></script>
 	<title>Conde Nast Traveler</title>
 	
 	<style type="text/css">
 		#page-container { width: 1024px; overflow: hidden; margin:0; padding:0; }
-		#header-holder { position: relative; width: 1024px; top:0;left:0; }
-		#menu-icon { background-image: url(../images/hamburger-white.svg); position: absolute; top: 22px; left: 30px; width: 35px; height: 20px; background-repeat: no-repeat; opacity: 0.5; }
-		#lede { width: 1024px; height: 65%; position: absolute; top: 0; left: 0; padding:0; background-image: url(../app/images/rome/0314-TR-WERO06.png); background-repeat: no-repeat; background-size: 100% auto; }
-		#logo-holder { background-image: url(../images/new-CNT-logo-2014-FFFFFF.svg); position: absolute; top: 60px; left: 412px; width: 220px;height: 300px;background-size: 100% auto; background-repeat: no-repeat; }
-		#search-box-holder { width: 500px; margin: 200px auto 0; padding: 12px 6px 16px; background-color: rgba(255,255,255,0.25); font-family: Circular; font-size: 36px; color: rgba(255,255,255,0.6); font-weight: normal; }
-		#destinations-row { display: inline-block; margin: 40px auto 0; }
-		#destinations-row li { float: left; font-family: Circular; font-size: 16px; font-weight: bold; text-transform: uppercase; color: white; margin: 0 20px 0 0; }
-		#destinations-row li:last-of-type { margin-right: none; }
+		#menu-icon { background-image: url(../images/hamburger-white.svg); position: fixed; top: 22px; left: 30px; width: 35px; height: 20px; background-repeat: no-repeat; opacity: 0.5; }
+		#lede { width: 100%; height: 65%; position: absolute; top: 0; left: 0; padding:0; background-image: url(../app/images/rome/0314-TR-WERO06.png); background-repeat: no-repeat; background-size: 100% auto; }
+		#logo-holder { background-image: url(../images/new-CNT-logo-2014-FFFFFF.svg); width: 220px;height: 100px;background-size: 100% auto; background-repeat: no-repeat; margin: 80px auto 0 auto; }
+		#search-box-holder-holder { width: 100%; margin: 27px 0 0 0; }
+		#search-box-holder { display: inline-block; margin: 0 auto; padding: 10px 22px 11px; background-color: rgba(255,255,255,0.25); border-bottom: 1px solid rgba(255,255,255,0.5); }
+		#search-box { font-family: Farnham; font-style: normal; font-size: 44px; color: rgba(0,0,0,0.8); font-weight: 100; float: left; margin: 0 30px 0 0; }
+		#search-box-icon { background-image: url(../images/search-icon-collapsed-white.svg); opacity: 0.3; width: 38px; height: 43px; background-repeat: no-repeat; background-size: 100% auto; float: left; margin-top: 8px; }
+		#destinations-row { display: inline-block; margin: 50px auto 0; }
+		#destinations-row li { float: left; font-family: Circular; font-size: 16px; font-weight: bold; text-transform: uppercase; color: white; margin: 0 40px 0 0; }
+		#destinations-row li:hover, #destinations-row li:active { color: #00AEEF; cursor: pointer; }
+		#destinations-row li:last-of-type { margin-right: 0; }
+		#subs-offer-header { position: absolute; top: 15px; right: 25px; }
+		#subs-offer-header .subs-pitch { float: left; margin: 15px 15px 0 0; }
+		#subs-offer-header .subs-pitch-hed { font-family: Circular; font-size: 18px; font-weight: bold; color: white; }
+		#subs-offer-header .subs-pitch-dek { font-family: Farnham; font-size: 16px; font-weight: 100; font-style: italic; color: white; margin: 3px 0 0 0; }
+		#subs-offer-header .cover { background-image: url(../images/TVL0514-cover.png); background-repeat: no-repeat; background-size: 100% auto; width: 60px; height: 82px; /*transform:rotate(3deg); -ms-transform:rotate(3deg); -webkit-transform:rotate(3deg); box-shadow: 0px 3px 5px rgba(0,0,0,0.8);*/ float: right; }
 	</style>
 	
 	<!--[if lt IE 9]>
@@ -27,20 +36,62 @@
 	<div id="page-container" class="clearfix">
 	
 		<div id="lede">
-			<div id="header-holder">
-				<div id="menu-icon"></div>
-				<div id="logo-holder"></div>
+			<div id="menu-icon"></div>
+			<div id="subs-offer-header" class="clearfix">
+				<div class="subs-pitch">
+					<div class="subs-pitch-hed">SUBSCRIBE!</div>
+					<div class="subs-pitch-dek">12 issues for $12</div>
+				</div>
+				<div class="cover"></div>
 			</div>
-			<div id="search-box-holder">Where do you want to be?</div>
+			<div id="logo-holder"></div>
+			<div id="search-box-holder-holder">
+				<ul id="search-box-holder" class="clearfix">
+					<li id="search-box">Where do you want to be?</li>
+					<li id="search-box-icon"></li>
+				</ul>
+			</div>
 			<ul id="destinations-row" class="clearfix">
-			 <li>#Italy</li>
-			 <li>#France</li>
-			 <li>#Bermuda</li>
-			 <li>#Kolkatta</li>
-			 <li>#Peru</li>
+			 <li class="rome">#Rome</li>
+			 <li class="rio">#Rio</li>
+			 <li class="bermuda">#Bermuda</li>
+			 <li class="india">#Kolkata</li>
+			 <li class="texas">#Texas</li>
 			</ul>
 			
 		</div><!--end of lede-->
 		
 	</div><!--end of page container-->
+	
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			
+			$("#destinations-row .rome").hover(function() {
+				$("#lede").css("background-image", "url(../app/images/rome/0314-TR-WERO06.png)");
+				$("#lede").css("background-position", "left top");
+			});
+			
+			$("#destinations-row .bermuda").hover(function() {
+				$("#lede").css("background-image", "url(../images/0314-TR-WEBP01.11.png)");
+				$("#lede").css("background-position", "0% 65%");
+			});
+			
+			$("#destinations-row .rio").hover(function() {
+				$("#lede").css("background-image", "url(../images/0314-TR-WERI04.01.png)");
+				$("#lede").css("background-position", "0% 40%");
+			});
+			
+			$("#destinations-row .india").hover(function() {
+				$("#lede").css("background-image", "url(../images/0314-TR-WEIN04.02.png)");
+				$("#lede").css("background-position", "0% 90%");
+			});
+			
+			$("#destinations-row .texas").hover(function() {
+				$("#lede").css("background-image", "url(../images/0314-TR-WETE01.01.png)");
+				$("#lede").css("background-position", "0% 57%");
+			});
+			
+		});
+	</script>
+	
 </body>
