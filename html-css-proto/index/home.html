@@ -10,7 +10,7 @@
 	<style type="text/css">
 		#page-container { width: 1024px; overflow: hidden; margin:0; padding:0; }
 		#menu-icon { background-image: url(../images/hamburger-white.svg); position: fixed; top: 22px; left: 30px; width: 35px; height: 20px; background-repeat: no-repeat; opacity: 0.5; }
-		#lede { width: 100%; height: 65%; position: absolute; top: 0; left: 0; padding:0; background-image: url(../app/images/rome/0314-TR-WERO06.png); background-repeat: no-repeat; background-size: 100% auto; }
+		#lede { width: 100%; height: 65%; max-height: 512px; position: absolute; top: 0; left: 0; padding:0; background-image: url(../app/images/rome/0314-TR-WERO06.png); background-repeat: no-repeat; background-size: 100% auto; }
 		#logo-holder { background-image: url(../images/new-CNT-logo-2014-FFFFFF.svg); width: 220px;height: 100px;background-size: 100% auto; background-repeat: no-repeat; margin: 80px auto 0 auto; }
 		#search-box-holder-holder { width: 100%; margin: 27px 0 0 0; }
 		#search-box-holder { display: inline-block; margin: 0 auto; padding: 10px 22px 11px; background-color: rgba(255,255,255,0.25); border-bottom: 1px solid rgba(255,255,255,0.5); }
@@ -24,7 +24,7 @@
 		#subs-offer-header .subs-pitch { float: left; margin: 15px 15px 0 0; }
 		#subs-offer-header .subs-pitch-hed { font-family: Circular; font-size: 18px; font-weight: bold; color: white; }
 		#subs-offer-header .subs-pitch-dek { font-family: Farnham; font-size: 16px; font-weight: 100; font-style: italic; color: white; margin: 3px 0 0 0; }
-		#subs-offer-header .cover { background-image: url(../images/TVL0514-cover.png); background-repeat: no-repeat; background-size: 100% auto; width: 60px; height: 82px; /*transform:rotate(3deg); -ms-transform:rotate(3deg); -webkit-transform:rotate(3deg); box-shadow: 0px 3px 5px rgba(0,0,0,0.8);*/ float: right; }
+		#subs-offer-header .cover { background-image: url(../images/TVL0514-cover.png); background-repeat: no-repeat; background-size: 100% auto; width: 60px; height: 82px; /*transform:rotate(3deg); -ms-transform:rotate(3deg); -webkit-transform:rotate(3deg);*/ box-shadow: 0px 3px 5px rgba(0,0,0,0.8); float: right; }
 	</style>
 	
 	<!--[if lt IE 9]>
@@ -61,32 +61,36 @@
 			
 		</div><!--end of lede-->
 		
+		<div>
+		
+		</div>
+		
 	</div><!--end of page container-->
 	
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			
-			$("#destinations-row .rome").hover(function() {
+			$("#destinations-row .rome").mouseenter(function() {
 				$("#lede").css("background-image", "url(../app/images/rome/0314-TR-WERO06.png)");
 				$("#lede").css("background-position", "left top");
 			});
 			
-			$("#destinations-row .bermuda").hover(function() {
+			$("#destinations-row .bermuda").mouseenter(function() {
 				$("#lede").css("background-image", "url(../images/0314-TR-WEBP01.11.png)");
 				$("#lede").css("background-position", "0% 65%");
 			});
 			
-			$("#destinations-row .rio").hover(function() {
+			$("#destinations-row .rio").mouseenter(function() {
 				$("#lede").css("background-image", "url(../images/0314-TR-WERI04.01.png)");
 				$("#lede").css("background-position", "0% 40%");
 			});
 			
-			$("#destinations-row .india").hover(function() {
+			$("#destinations-row .india").mouseenter(function() {
 				$("#lede").css("background-image", "url(../images/0314-TR-WEIN04.02.png)");
 				$("#lede").css("background-position", "0% 90%");
 			});
 			
-			$("#destinations-row .texas").hover(function() {
+			$("#destinations-row .texas").mouseenter(function() {
 				$("#lede").css("background-image", "url(../images/0314-TR-WETE01.01.png)");
 				$("#lede").css("background-position", "0% 57%");
 			});
