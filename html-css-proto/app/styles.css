@@ -217,6 +217,10 @@ li {
 	padding: 0;
 }
 
+img {
+  vertical-align: middle;
+}
+
 #page-bounds {
 	width: 768px;
 	height: 1024px;
