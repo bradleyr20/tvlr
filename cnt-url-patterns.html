@@ -33,35 +33,42 @@
 <th align="left">Notes</th>
 </tr></thead>
 <tbody>
-<tr>
+<tr class="alternate">
 <td align="left">Slideshows (Galleries)</td>
-<td align="left">/galleries/YYYY-MM-DD/slug/(photoId)</td>
+<td align="left">/galleries/YYYY-MM-DD/slug</td>
 <td align="left">/galleries/2013-12-17/behind-the-scenes-at-the-best-restaurant-in-the-world</td>
 <td align="left"></td>
 </tr>
-<tr class="alternate">
+<tr>
 <td align="left">Stories</td>
 <td align="left">/stories/YYYY-MM-DD/slug</td>
 <td align="left">/stories/2014-01-01/9-reasons-to-visit-colorado-that-arent-pot-tourism</td>
 <td align="left">All punctuation, apostrophes, etc should be eliminated during translation from title to URL (rather than transformed into dashes; only spaces should become dashes)</td>
 </tr>
-<tr>
+<tr class="alternate">
 <td align="left">Lists</td>
-<td align="left">/&lt;list-name&gt;/YYYY</td>
-<td align="left">/hot-list/2013<br>/gold-list/2014<br>/readers-choice-awards/2015</td>
-<td align="left">If user types in list name without year, should get directed to most recent year’s list page. Example: user types /hot-list, user gets /hot-list/2013</td>
+<td align="left">/awards/&lt;list-name&gt;/YYYY</td>
+<td align="left">/awards/hot-list/2013<br>/awards/gold-list/2014<br>/awards/readers-choice/2015</td>
+<td align="left">If user types in list name without year, should get directed to most recent year’s list page. Example: user types /awards/hot-list, user gets /awards/hot-list/2013</td>
+</tr>
+<tr>
+<td align="left">RCA Regions</td>
+<td align="left">/awards/readers-choice/YYYY/&lt;region&gt;</td>
+<td align="left">The RCA's have sublists on each main list -- so the US regional list would be <code>/awards/readers-choice/2013/united-states</code>
+</td>
+<td align="left"></td>
 </tr>
 <tr class="alternate">
 <td align="left">Channel indexes</td>
 <td align="left">/&lt;channel-name&gt;</td>
-<td align="left">/food-and-drink<br>/style-and-design,</td>
+<td align="left">/food-and-drinks<br>/style-and-design,</td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">Subchannel indexes</td>
 <td align="left">/&lt;channel-name&gt;/&lt;subchannel-name&gt;</td>
-<td align="left">/food-and-drink/food-trips<br>/arts-and-culture/music</td>
-<td align="left">Content on page is driven by combination of channel and subchannel, eg /food-and-drink/food-trips can display any story that has channel of food-and-drink PLUS subchannel of food-trips.<br>-<br>Priority of display order:<br>Stories with both &lt;channel-name&gt; and &lt;subchannel-name&gt; in PRIMARY (ie, first-in-list) positions<br>Stories with &lt;subchannel-name&gt; in PRIMARY position, &lt;channel-name&gt; in non-primary position<br>Stories with &lt;channel-name&gt; in PRIMARY posiiton, &lt;subchannel-name&gt; in non-primary position<br>Stories with NEITHER &lt;channel-name&gt; nor &lt;subchannel-name&gt; in primary position</td>
+<td align="left">/food-and-drinks/food-trips<br>/arts-and-culture/music</td>
+<td align="left">Content on page is driven by combination of channel and subchannel, eg /food-and-drinks/food-trips can display any story that has channel of food-and-drink PLUS subchannel of food-trips.<br>-<br>Priority of display order:<br>Stories with both &lt;channel-name&gt; and &lt;subchannel-name&gt; in PRIMARY (ie, first-in-list) positions<br>Stories with &lt;subchannel-name&gt; in PRIMARY position, &lt;channel-name&gt; in non-primary position<br>Stories with &lt;channel-name&gt; in PRIMARY posiiton, &lt;subchannel-name&gt; in non-primary position<br>Stories with NEITHER &lt;channel-name&gt; nor &lt;subchannel-name&gt; in primary position</td>
 </tr>
 <tr class="alternate">
 <td align="left">Special reports</td>
@@ -100,7 +107,7 @@
 <td align="left">If there are contributors with the same name, deliver error upon attempted publish. Error should advise user that slug is taken, and advise them to append an "-&lt;integer&gt;" to the end of the slug.</td>
 </tr>
 </tbody>
-		</table>
+	</table>
 
 	
 	</div>
